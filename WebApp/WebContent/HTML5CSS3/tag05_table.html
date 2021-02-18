@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<hl>표만들기</hl>
+
+<pre>
+table:표의 시작
+tr:1줄 생성
+td:1칸 생성
+th:강조하고 싶은 줄에 td대신에 표시
+
+열단위로 처리
+colgroup
+col
+
+caption 제목
+
+thead 표의 상단
+tbody 표 몸통
+tfoot표의 하단
+
+컬럼
+속성
+width, heigh : px , %
+</pre>
+
+<table border="1" width="100%" style="color:green">
+     <caption><h1>표의제목</h1></caption>
+     <clogroup>
+           <col span="2" style="background-image:url(../img/mm.jfif)">
+           <col style="background:yellow"/>
+     </clogroup>
+     <thead> 
+     <tr height="100" style="color:blue">
+         <th>첫번재칸11111111111</th>
+	     <td style="background-color:#ff0000">두번재칸   #ff0000->빨강 </td>  
+	     <td>33333</td>
+     </tr>
+     </thead>
+     <tbody>
+	 <tr>
+	     <td>두번째줄 두번째칸</td>
+	     <td><img src= "../img/mm.jfif" width="100"/></td>
+	     <td>33</td>
+	 </tr>
+	 </tbody>
+	 
+	 <tfoot>
+	 <tr>
+	     <td>두번째줄 두번째칸</td>
+	     <td><img src= "../img/mm.jfif" width="100"/></td>
+	     <td>33</td>
+	 </tr>
+	</tfoot>
+	
+</table>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>폼 테그: 사용자가 정보를 입력 또는 선택할수 있는 폼</h1><!--                 파일 업로드시 필요                   -->
+<!--  <form method="post" action="member.jsp?username='홍길동' " name="frm" enctype="multipart/form-data"> -->
+<form>
+    <!-- input:아이디, 비밀번호, checkbox, radio, 버튼 등  
+         select, option
+         textarea
+         타입은 자료형 뭔지
+         벨루어는 기본으로 들어가있는 입력값
+         네임은 변수
+         maxlength 최대 글자 입력수
+         
+         서버로 데이터 가져갈때는 벨루어를 가져감
+         
+         get 방식 전송 : 주소 표시줄에 데이터가 표시
+         근데 비번도 나오는 문제/
+         
+         post 방식 전송 : 데이터를 숨겨서 전송하기
+         
+     -->
+     아이디 : <input type="text" name="userid" placeholder="아이디를 입력하세요" size="10" maxlength="5"/><br/>
+     비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호"/><br/>
+     파일첨부 : <input type="file" name="filename" id="filename"/><br/>
+     체크박스 : <input type="checkbox" name="hobby" value="a"/>등산
+              <input type="checkbox" name="hobby" value="a"/>농구
+              <input type="checkbox" name="hobby" value="a"/>축구<br/>
+     라디오  :  <input type="radio" name="gender" value"M" checked/>남
+              <input type="radio" name="gender" value"F"/>여<br/>
+              
+     여러줄의 텍스트 : <textarea name="content" rows="5" cols="50">컨텐츠가 들어가는 자리</textarea><br/>
+     
+     목록 테그 : <select name="hobby2" size="3">
+                   <option value="독서">독서</option>
+                   <option value="등산">등산</option>
+                   <option value="농구">농구</option>
+                   <option value="바이크" selected>바이크</option>
+                </select><br/>
+                
+    목록 태그 : <select name="choice">
+              <optgroup label="프론트 엔드">
+                   <option value="html">html</option>
+                   <option value="css">css</option>
+                   <option value="javascript">javascript</option>
+              </optgroup>
+              
+              <optgroup label="백엔드">     
+                   <option value="jsp">jsp</option>
+                   <option value="servlet">servlet</option>
+              </optgroup>
+    </select> 
+    <br/>
+   
+   
+   버튼 : <input type="button" value="버튼"/>
+         <input type="submit" value="보내기" formaction="member.jsp" formmethod="post" formtarget="_blank"
+                                                                       formtype="multiport/form-data"/>
+         
+         <input type="reset" value="다시쓰기"/>    
+         <button>버튼</button>
+         <input type="image" src="../img/rr.png"/>
+     
+           
+</form>
+</body>
+</html>
