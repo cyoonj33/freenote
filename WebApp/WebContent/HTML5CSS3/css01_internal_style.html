@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!-- 스타일 표시 방법
+inline 방식 :각 html태그에 직접 style속성으로 표기
+internal 방식 : head태그에 style태그를 이용하에 표기하는 방법
+external 방식 : 스타일시트는 
+ -->
+ <style>
+    /*스타일 시트 주석문*/
+    /*어디에 적용할건지 태그 선택자 중요(ul이면 ul태그 적용된 모든 것), 아이디 선택자(아이디는 1개만 있어야 한다), 클래스 선택자*/
+    
+    /* 1. 선택자(속성:속성값; 속성:속성값; 속성:속성값; 등등 이렇게)*/
+    div{color:blue; background-color:#ffdd; }
+    #txt{
+        background-color:pink;
+    }
+    
+    /*클래스 선택자*/
+    .c1{
+      font-size:20pt;
+    }
+    #d1{
+    /*text-decoration : underline(밑줄),overline(윗줄),line-through(취소전),none*/
+    text-decoration:underLine;
+    }
+    
+ </style>
+ 
+ 
+</head>
+<body>
+
+<h1 style="color:red">스타일 시트</h1>
+
+<ul>
+    <li class="c1">inline 방식 : html태그에 style 속성으로 표기 </li>
+    <li id="txt">internal 방식 : html태그에 style 속성으로 표기 </li>
+    <li>external 방식 : html태그에 style 속성으로 표기 </li>
+
+</ul>
+
+<div class="c1">
+ㅓㅓㅓㅓ ㅇㄴㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<span id="d1">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+ㄴㅅ4ㄱ3ㅈ45
+</div>
+
+<ul>
+    <li>inline 방식 : html태그에 style 속성으로 표기 </li>
+    <li id="txt">internal 방식 : html태그에 style 속성으로 표기 </li>
+    <li>external 방식 : html태그에 style 속성으로 표기 </li>
+
+</ul>
+
+<div>
+ㅓㅓㅓㅓ ㅇㄴㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+<span>ㄴㅅ4ㄱ3ㅈ45</span>ㄴㅅ4ㄱ3ㅈ45
+</div>
+
+</body>
+</html>
