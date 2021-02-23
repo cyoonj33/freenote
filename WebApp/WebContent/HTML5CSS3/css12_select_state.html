@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*상태선택자      , 컴포넌트가 체크되면...      * /
+/* :focus -> 커서가 컴퍼넌트 들어오면 
+   :ckecked ->, 컴포넌트가 체크되면...
+disabled : 비활성화
+readonly : 읽기전용
+   enabled : 활성화일때 스타일 적용
+
+
+*/
+
+input:focus{
+
+   background-color:yellow;
+
+}
+
+input:checked{
+   width:50px; height:50px;
+}
+
+
+textarea:disabled{
+   color:red; font-size:1.5em;
+}
+
+input:enabled{
+    background-color:red; color:#fff;
+}
+
+</style>
+
+</head>
+<body>
+
+<form action="">
+ 아이디 : <input type="text" name="userid" placeholder="아이디를 입력하세요" size="10" maxlength="5" value="goguma" readonly/><br/>
+     비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호"/><br/>
+     파일첨부 : <input type="file" name="filename" id="filename"/><br/>
+     체크박스 : <input type="checkbox" name="hobby" value="a"/>등산
+              <input type="checkbox" name="hobby" value="a"/>농구
+              <input type="checkbox" name="hobby" value="a"/>축구<br/>
+     라디오  :  <input type="radio" name="gender" value"M" checked/>남
+              <input type="radio" name="gender" value"F"/>여<br/>
+              
+     여러줄의 텍스트 : <textarea name="content" rows="5" cols="50">컨텐츠가 들어가는 자리</textarea><br/>
+     
+     목록 테그 : <select name="hobby2" size="3">
+                   <option value="독서">독서</option>
+                   <option value="등산">등산</option>
+                   <option value="농구">농구</option>
+                   <option value="바이크" selected>바이크</option>
+                </select><br/>
+      <input type="button" value="버튼"/>         
+       
+</form>                
+</body>
+</html>
