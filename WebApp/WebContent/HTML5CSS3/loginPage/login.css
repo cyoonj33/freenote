@@ -25,4 +25,62 @@ body{
 #login_form{
 	
 	padding:60px 40px;
+	overflow:auto;
+	
+}
+
+#login{
+	float:left;
+	width:300px;
+
+	
+}
+
+#banner{
+	float:right;
+}
+
+.form_input{
+	width:97%;
+	
+	
+}
+
+.form_com{
+	width:100%;
+	
+}
+
+.form{
+	margin:3px 0px;
+	height:40px;
+	border-top:1px solid #ddd;
+	border-right:0px solid #ddd;
+	border-right:0px solid #fff;
+	border-left:0px solid #fff;
+	
+}
+
+.sub{
+	background-color:rgb(78,135,239);
+	color:#fff;
+	font-size:1.2em;
+	
+}
+
+#state{
+	margin:20px 0;
+	
+}
+
+#check{
+	margin:10px 0;
+	text-align:center;
+	
+}
+
+#bottom{
+	text-align:center;
+	margin:50px 0px;
+	
 }
