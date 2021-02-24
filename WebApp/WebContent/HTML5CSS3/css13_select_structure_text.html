@@ -41,7 +41,20 @@
 
 </style>
 </head>
-<body>
+<!-- 
+html속성을 이용한 마우스 드래그 또는 복사 제한
+oncontextmenu : 마우스 오른쪽 버튼 메뉴 제어
+onselectstart : 마우스 드래그 시작 불가능
+ondragstart : 드래그 시작 불가능
+ondragend : 드래그 종료 불가능
+
+
+ -->
+
+
+
+
+<body oncontextmenu ="return false" onselectstart="return false">
 <div id="std">
     <ul>
        <li>구조 선택자~~~~~</li>
@@ -55,8 +68,43 @@
        <li>구조 선택자~~~~~</li>
        
     </ul>
-
+ </div>
+ 
+ <style>
+ 
+ #txt::first-letter{
+ color:red; font-size:30px; font-weight:bold;
+ 
+ }
+ 
+ #txt::first-line{
+ text-decoration:underline;
+ color:blue;
+ 
+ }
+ 
+ #txt::selection{
+ background-color:#000; 
+ color:yellow;
+ 
+ }
+ 
+ 
+ </style>
+ 
+ 
+<div id="txt">
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+해발 5,000m에 이르는 비포장 임도를 넘나드는 혹독한 여정이다. 년 가을 문화재청이 개방한 ‘조선 왕릉 순례길’을 소개한 책이다.
+서울 정릉부터 영월 장릉까지 조선 왕릉을 잇는 600km의 길이다.
+문화사학자 신정일 작가가 조선 왕릉 49곳을 하나하나 소개하며 130여 컷의 사진과 함께 왕실 이야기를 흥미진진하게 풀어냈다. 
+일상생활에서 실천할 수 있는 제로 웨이스트 방법들을 총망라한다. 저자는 지난 5년간 제로 웨이스트를 실천한 경험담을 소개했다.
+ 소비, 위생용품, 외출, 화장, 장보기, 먹거리, 취미 생활 등으로 세분화해 구체적 실천법도 담았다.
 </div>
+
+
+ 
  
 		 <style>
 		 /*구조 선택자*/
@@ -98,5 +146,28 @@
 		    </ul>
 		
 		</div>
+		
+		
+<style>
+#lnk>a:not([target=_blank]){
+  background-color:orange;
+}
+
+#lnk>a::after{content:'->'attr(href)}
+#lnk>a::before{content:attr(href)'<-'}
+
+
+</style>
+
+
+<div id="lnk">
+<a href="https://www.daum.net">다음</a></br>
+<a href="https://www.nate.com">네이트</a></br>
+<a href="../index.html">홈으로</a></br>
+<a href="https://www.oracle.com">오라클</a></br>
+ </div>
+ 
+ 
+ 
 </body>
 </html>

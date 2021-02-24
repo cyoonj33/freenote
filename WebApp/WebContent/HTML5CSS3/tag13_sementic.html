@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   body,ul,li{margin:0; padding:0; list-style-type:none;}
+   header{
+      height:150px; background-color:lightblue;
+   }
+   
+    #logo, header>nav ,section{
+        width:1000px; margin:0 auto;
+   }
+   
+  
+   #logo{
+        width:1000px; height:100px; font-size:40px; line-height:100px; text-align:center;
+        
+   }
+   
+   header>nav{
+       height:50px; 
+   
+   }
+   
+   header>nav li{
+       float:left; text-align:center; width:20%; line-height:50px;
+   }
+   
+</style>
+</head>
+<body>
+<header>
+
+
+   <div id="logo">BitCamp</div>
+   <nav>
+      <ul>
+         <li>11</li>
+         <li>22</li>
+         <li>33</li>
+         <li>44</li>
+         <li>55</li>
+      </ul>
+   
+   </nav>
+</header>
+
+
+
+
+
+
+<style>
+   section{
+     overflow:auto;
+   }
+   
+    section>nav{
+    width:150px; float:left; background-color:pink; 
+    }
+    
+    section>article{
+    width:850px; float:right; 
+    }
+    
+    section>nav li{
+        height:50px; line-height:50px;
+        border-bottom : 1px solid #ddd;
+        padding-left:30px;
+    }
+    /*게시판*/
+    section>article h1{text-align:center;}
+    section>article>ul{  
+        margin:50px;
+    }
+    
+    section>article li{
+      float:left; width:10%;
+      line-height:40px; border-bottom:1px solid #ddd;
+    }
+    
+    /*제목*/
+    
+    
+    section>article li:nth-child(5n+2){
+     width:60%; white-space:nowrapl; overflow: hidden; text-overflow:eclipsis;
+    }
+    section>article li:nth-child(5n+1){
+     width:7%;
+    }
+    section>article li:nth-child(5n+4){
+     width:13%;
+    }
+    
+    
+    footer{
+       height:100px; text-align:center; background-color:yellow;
+    }
+
+</style>
+
+
+
+<section>
+    <nav>
+       <ul>
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+         <li>5</li>
+         <li>6</li>
+         <li>7</li>
+         
+         
+       </ul>
+       
+    </nav>
+    
+    <article>
+       <h1>게시판</h1>
+       <ul>
+         <li>번호</li>
+         <li>제목</li>
+         <li>작성자</li>
+         <li>등록일</li>
+         <li>조회수</li>
+         
+         <li>100</li>
+         <li>ㅇ너랴ㅐㅓ매ㅑㄷㅈ</li>
+         <li>홍길동</li>
+         <li>2021-02-10</li>
+         <li>05</li>
+         
+         <li>95</li>
+         <li>눌러보세여~~~</li>
+         <li>홍길동</li>
+         <li>2021-02-10</li>
+         <li>05</li>
+         
+         <li>89</li>
+         <li>도배글~~~</li>
+         <li>홍길동</li>
+         <li>2021-02-10</li>
+         <li>05</li>
+       </ul>
+       
+      
+    </article>
+</section>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

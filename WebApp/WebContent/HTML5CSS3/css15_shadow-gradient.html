@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+     div{
+     width:500px; height:100px; margin:50px; font-size:3em;
+     border:1px solid gray; text-align:center; line-height:100px;
+     
+    
+     }
+     
+     /*박스에 그림자 설정*/
+     
+     div:first-child {
+     /*       왼쪽,오른쪽    위쪽,   아래쪽 투명   그림자 색상      */
+    
+     box-shadow: 5px       -5px      5px     red    ;
+     
+     
+     }
+     
+     div:nth-of-type(2){
+        text-shadow:5px     5px     5px     green;
+     }
+     
+    /*    배경 그라데이션  https://www.colorzilla.com/gradient-editor      */
+     
+     div:last-child{
+        width:100%;
+        height:700px;
+        font-size:2em;
+        line-height:1.2;
+        
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d0f4f2+0,f2d2ec+23,bddaed+51,e5d2f2+74,d2d3f2+100 */
+		background: #d0f4f2; /* Old browsers */
+		background: -moz-linear-gradient(top,  #d0f4f2 0%, #f2d2ec 23%, #bddaed 51%, #e5d2f2 74%, #d2d3f2 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #d0f4f2 0%,#f2d2ec 23%,#bddaed 51%,#e5d2f2 74%,#d2d3f2 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #d0f4f2 0%,#f2d2ec 23%,#bddaed 51%,#e5d2f2 74%,#d2d3f2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0f4f2', endColorstr='#d2d3f2',GradientType=0 ); /* IE6-9 */
+        
+     }
+     
+     
+</style>
+</head>
+
+
+<body>
+
+<div>
+박스에 그림자 설정
+</div>
+
+
+<div>
+글자에 그림자 설정
+</div>
+
+<div>
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+</div>
+
+
+</body>
+</html>

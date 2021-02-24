@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   div{
+      width:500px;
+      height:100px;
+      border:1px solid gray;
+   }
+   div:first-child{
+   white-space:nowrap;
+   /*줄 바꾸지 읺는다*/
+   overflow:hidden;
+   
+   text-overflow:ellipsis;
+   }
+   
+   div:last-child{
+   text-align:left; /*문자열을 왼쪽으로 정렬, 문자를 왼쪽 정렬하지 않으면 말줄임표가 안보일 수 있다.*/
+   white-space:normal;
+   line-height:1.3;
+   height:5em;
+   overflow:hidden;
+   word-wrap:break-word;/*잘릴 문자를 단어로 설정*/
+   display:-webkit-box; /*여백삽입과 같이 유연한 높이 증가를 위해 풀텍스 박스 형탤 변환*/
+   -webkit-line-clamp:5; /*보여줄 줄의 갯수*/
+   -webkit-box-orient:vertical; /*vertical 박스의 방향설정*/
+   }
+   
+   
+</style>
+</head>
+<body>
+<div>
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+</div>
+
+
+<div>
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+월간<山>에 ‘화촌일기’를 연재 중인 이남석씨(필명 송남)가 그동안 다녀온 세계 오지 자전거 여행기를 매끄러운 글과 사진으로 풀어냈다.
+인도 라다크 히말라야, 강고트리 히말라야, 파미르고원, 안데스산맥, 아틀라스산맥 등 9곳의 여행지다.
+</div>
+
+
+
+</body>
+</html>

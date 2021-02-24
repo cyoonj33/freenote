@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>media 쿼리:반응형 스타일 지정하기</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+    ul,li{margin:0px; padding:0px; list-style-type:none;}
+    li{border:1px solid #ddd; margin:3px; padding:3px; width:45%; float:left;}
+    
+    @media all and (min-width:320px) and (max-width:600px){
+      li{
+           background-color:red;
+           color:white;
+      }
+    }
+    
+    @media all and (min-width:601px) and (max-width:800px){
+      li{
+           background-color:lightblue;
+           color:red;
+      }
+    }
+    
+    @media all and (min-width:601px) and (max-width:801px){
+      li{
+           background-color:lightblue;
+           color:white;
+      }
+    }
+    
+    
+</style>
+  
+</head>
+<body>
+<ul>
+ <li>베스트셀러 ‘푸른 사자 와니니’가 독자들의 응원에 힘입어 세 번째 이야기로 돌아왔다. </li>
+ <li>떠돌이 생활을 끝내고 자신들의 영토를 갖게 된 와니니와 친구들 앞에 치타, 하이에나, 들개 등 여러 동물이 연달아 얼씬거린다.</li>
+ <li> 와니니 무리는 자신들의 영토를 지키기 위해 담대히 맞서는 한편, 서로를 향해 새로운 감정을 싹틔우는데</li>
+ <li>독자들은 목숨 걸고 두려움에 맞서는 와니니와 친구들을 통해 진정한 용기가 무엇인지 깨닫고, 와니니 무리 안에서 관계가 변화하는 모습을 보며 절로 설렘을 느끼게 될 것이다.</li>
+ <li>‘푸른 사자 와니니’ 시리즈는 앞으로도 계속 이어질 예정이다.</li>
+ <li>떠돌이 생활에서 벗어나 검은 땅에 안착한 와니니 무리. 이제는 모든 일이 순조로울 줄 알았는데, 평화를 깨는 사건들이 연달아 일어난다.</li>
+ <li>‘위대한 와니니’가 수사자 ‘무투’를 제압했다는 소문이 퍼졌는데도 수상한 암사자가 검은 땅 주위를 어슬렁거리고, 하이에나 무리와 들개 무리까지 검은 땅을 노린다.</li>
+ 
+</ul>
+
+
+</body>
+</html>
