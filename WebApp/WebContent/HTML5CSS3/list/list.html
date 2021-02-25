@@ -3,48 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+<link rel="stylesheet" href="../style.css" type/css"/>
 <style>
+/*폭:614px*/
+
+ul,li{
+  margin:0; padding:0; list-style-type:none;
+}
+
+#mainDiv{
+    width:590px; 
+    border:1px solid gray; margin:10px; overflow:auto;
+}
+
+#mainDiv>div:first-of-type{
+  width:395px;
+}
 
 
+#mainDiv>div, #mainDiv>div:first-of-type li{
+   float:left;
+}
+
+#mainDiv>div:first-of-type li{
+  width:158px; margin:8px; border:1px solid gray; background:#eee;
+   padding:0 10px;
+}
+
+#mainDiv>div:nth-of-type(2){
+   margin:8px;
+}
+
+#mainDiv>div:last-of-type li{
+   margin:8px; width:178px;
+}
 
 </style>
-
+</head>
 <body>
-
-<table border="l">
-     <tr>
-         <td>Q헐리우드 영화에서 러시안 인이 주로 악당으로...
-			 A냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</td>
-	     <td>Q독도 이름의 유래를 알려주세요
-			 A독도와 관련된 명칭은 시대에 따라 문헌에 아주 다양하게 나옵니다.</td>
-	     <td><img src="tab2_1.png"/></td>   
-     </tr>
-     
-     
-     
-	 <tr>
-	     <td>Q매실청은 왜 맛있나요?
-		     A설탕이 많이 들어가서 그렇습니다.</td>
-	     <td>Q108배가 다이어트에 도움이 되나요?
-		     A108배하면 전신운동이 되기때문에 운동효과가 있습니다.</td>
-	    
-	 </tr>
-	 
-	 
-	 
-	 <tr>
-	     <td><img src="tab2_2.png"/>
-				111</td>
-	     <td><img src="tab2_3.png"/>
-				222</td>
-	     <td><img src="tab2_4.png"/>
-				333</td>
-	 </tr>
-	 
-
-</table>
-
-
+<div id="mainDiv">
+    <div>
+         <ul>
+            <li>
+               <a href="#"><p>Q헐리우드 영화에서 러시안 인이 주로 악당으로...</p>
+               <p>A냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p></a>
+            </li>
+            <li>
+              <a href="#"> <p>Q헐리우드 영화에서 러시안 인이 주로 악당으로...</p>
+               <p>A냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p></a>
+            </li>
+            <li>
+               <a href="#"><p>Q헐리우드 영화에서 러시안 인이 주로 악당으로...</p>
+               <p>A냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p></a>
+            </li>
+            <li>
+               <a href="#"><p>Q헐리우드 영화에서 러시안 인이 주로 악당으로...</p>
+               <p>A냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p></a>
+            </li>
+         </ul>    
+    </div>
+    
+    
+    <div>
+       <img src="tab2_1.png"/>
+    </div>
+    
+    <div><!--  상식 -->
+        <ul>
+           <li>
+             <a href="#"><img src="tab2_2.png"/></br>
+              견과류의 하루 적정 섭취량</a></br>
+              견과류             
+           </li>
+           
+           <li>
+              <a href="#"><img src="tab2_3.png"/></br>
+              날벌레가 빚에 몰려드는 이유</a></br>
+              생활
+           </li>
+           
+           <li>
+              <a href="#"><img src="tab2_4.png"/></br>
+              냉면의 유래와 역사</a></br>
+              음식
+           </li>
+           
+        </ul>
+    
+    </div>
+</div>
 </body>
+
 </html>

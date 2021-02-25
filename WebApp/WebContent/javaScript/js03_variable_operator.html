@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+    //계산가능
+    //연산자 : + - * / % > < >= <= != == += -= ++ -- && || !
+    //명령어 : if , if~else, for, while, switch, do while, break, continue....
+    
+    var str = 'hong'; // "hong" 또는 'hong'
+    var n = 1234;
+    var n2 =12.23; 
+    
+    
+    //함수 정의
+    //페이지 로딩시에는 실행되지 않는다 //alert('버튼을 선택함')
+    function gugudan(){
+	      var dan = document.getElementById('num').value;
+	    
+	    //구구단.....
+	      var r ="";
+	      for(var i=2; i<=9; i++){
+	    	  r += dan +"*"+i+"="+(dan*i)+"<br/>";
+    	
+        }
+	      document.getElementById("result").innerHTML = r;
+	      document.getElementById("num").value="";
+	      
+    }
+ function plus(){
+	 //문자를 숫자로 바꾸서            Integer.parseInt() Double.parseDouble()
+	 
+	  var n1 = parseInt(document.getElementById("num").value);
+	  var n2 = parseInt(document.getElementById("num2").value);
+	  
+	  var result = n1 + n2;
+	  document.getElementById("result").innerHTML = result;
+	 
+ }
+ 
+ function imageChange(){     
+    document.getElementById("i").src="../img/03.jfif";
+ }
+ 
+ function change(){     
+	    document.getElementById("i").src="../img/02.jfif";
+	 }
+</script>
+</head>
+
+
+<body>
+수 : <input type="text" id="num"/>
+수 : <input type="text" id="num2"/>
+<input type="button" value="구구단" onclick="gugudan()"/> 
+<input type="button" value="더하기" onclick="plus()"/> 
+
+<div id="result"></div>
+<script>
+//document.getElementById("result").innerHTML= r; //대입되는 데이터에 따라서 데이터 타입이 바뀜 //onclick="imageChange()" -->클릭하면
+</script>
+<img src="../img/02.jfif" id="i" onmouseover="imageChange()" onmouseout="change()"/> </br>
+<img src="../img/05.jfif" id="i" onmouseover="this.src='../img/04.jfif'" onmouseout="this.src='../img/05.jfif'"/>
+
+
+</body>
+</html>

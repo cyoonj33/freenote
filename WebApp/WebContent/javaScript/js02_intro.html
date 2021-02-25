@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<h1 id="txt">스타일 시트를 자바스크립트에서 적용하기</h1>
+<img src="../img/mm.jfif" id="alpa"/>
+<div id="view"></div>
+</body>
+
+
+</html>
+
+<script>
+
+//변수 선언시 별도의 데이터 형을 지정하지 않습니다.
+//처음으로 대입되는 데이터의 따라 형이 자동으로 설정된다.
+      var imgTag="";
+      for(i=2; i<=4; i++){
+    	  imgTag += "<img src='../img/0"+i+".jfif'/>";
+    	  
+      }
+//                                      변수
+      document.getElementById("view").innerHTML=imgTag;
+      
+//    자바스크립트에서 스타일 시트 적용하기
+      document.getElementById("txt").style.color="#5ae";
+      
+      var obj=document.getElementById("txt");
+
+//    color background-color font-size
+
+      obj.style.backgroundColor="pink";
+      obj.style.border= "solid 2px green";
+      
+// 자바스크립트에서 html속성 다루기
+    var imgObj= document.getElementById("alpa");
+    imgObj.src='../img/04.jfif';
+    imgObj.title = '풍선도움말~~~~~';
+    
+    var imgFilename = imgObj.src;
+    document.write("<br/>"+imgFilename) // document.write("<br/>",imgFilename)도 가능
+    
+    console.log(imgFilename); //콘솔창에 띄우기
+    alert(imgFilename);//대화상자 띄우기
+    
+
+      
+</script>
+
+
