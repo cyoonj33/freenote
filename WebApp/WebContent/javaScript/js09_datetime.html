@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+      var dateTime = new Date(); //현재시간과 날짜를 객체로
+      var dateTime2 =  new Date("2021.05.10");//초기값을 아예 주기  "2021/06/07"  "2021/08/09"
+      var dateTime3 = new Date(56478934);//밀리초: 1970년 1월 1일 0시 0분 0초
+      
+      document.write("dateTime="+dateTime);
+      document.write("<br/>dateTime2="+dateTime2);
+      document.write("<br/>dateTime3="+dateTime3);
+      
+      /*
+      
+      년도: getFullYear(), 월: getMonth(), 일:getDate()
+      시: getHours(), 분:getMinutes()  초:getSeconds()
+      요일: getDay() 일요일:0; 월요일:1,................토요일:6
+      
+      
+      
+      */
+      
+      var timeTxt= dateTime.getFullYear()+"년";
+      timeTxt += (dateTime.getMonth()+1)+"월";
+      timeTxt += dateTime.getDate()+"일";
+      timeTxt += dateTime.getHours()+":" + dateTime.getMinutes()+":"+dateTime.getSeconds();
+      
+      document.write("<br/>",timeTxt);
+      document.write("<br/>요일->"+dateTime.getDay());
+      
+      //마지막날
+      var date = new Date(dateTime.getFullYear(),dateTime.gerMouth()+1,0);
+      document.write("마지막날-->"+date.getDate());
+      
+      
+      
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
