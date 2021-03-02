@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>달력</title>
+<script>
+    function setDate(){
+    	var nowDate=new Date();
+    	var year=nowDate.getFullYear();
+    	var month = nowDate.getMonth()+1;
+    	nowDate = new Date(year,month-1,1); 
+    	var week = nowDate.getDay();
+    	var lastDay = new Date(year,month,0).getDate();
+    	
+    	//년월 출력
+    	document.getElementById("title").innerHTML = year+"년"+month+"월"+week;
+    	
+    	var weekName = ['일','월','화','수','목','금','토'];
+    	
+    	var dayDate="";
+    	for(var i=0; i<weekName.length; i++){
+    		dayDate+="<li>"+weekName[i]+"</li>";
+    		
+    	}
+    	//공백문자
+    	for(var i=0; i<week; i++){
+    		dayDate += "<li> </li>";
+    		
+    	}
+    	
+    	//날짜
+    	for(var d=1; d<=lastDay; d++){
+    		dayDate += "<li>"+d+"</li>";
+    	}
+    	document.getElementById("day").innerHTML = dayDate;
+    
+    }
+    
+    
+</script>
+<style>
+    ul,li{margin:0; padding:0px; list-style-type:none;}
+    #cal{
+      width:500px;
+    }
+    
+    #cal>img{
+      width:100%;    
+    }
+    
+    #title{
+      text-align:center;
+    }
+    #day>li{
+    float:left;
+     width:14.2%
+    }
+    
+
+</style>
+</head>
+<body onload="setDate()">
+<div id="cal">
+    <img src="../img/04.jfif"/>
+    <h1 id="title">ff</h1>
+    <ul id="day"></ul>
+</div>
+
+</body>
+</html>
