@@ -56,7 +56,6 @@
 	   //마우스 오버일때 호출할 함수
 	   cnt++;
 	   viewOutput();
-	  
 	   
    }
    var outCnt=0;
@@ -64,6 +63,7 @@
 	   outCnt++;
 	   viewOutput();
    }
+   
    function viewOutput(){
 	   document.getElementById("view").innerHTML="mouseover->"+cnt+"번째실행<br/>mouseout->" + outCnt;
    }
@@ -129,7 +129,7 @@
 </div>
 
 
-<div id="view2"></div>
+<div id="view2">ㅎㅇ</div>
 
 <div id="overOut" onmouseover="overTest()" onmouseout="outTest()">
   <h1>onmouseover, <b>onmouseout</b> 이벤트</h1>
@@ -137,7 +137,7 @@
 </div>
 
 
-<div id="view"></div>
+<div id="view">ㅇㅇ</div>
 
 </body>
 </html>

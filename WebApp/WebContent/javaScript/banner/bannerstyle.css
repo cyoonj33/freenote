@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body{
+	margin:0px;	text-align:center;
+}
+
+header, main{
+	 width:600px; margin:0 auto;
+}
+
+main>img{
+	width:680px; height:300px;
+}
+
+#left{
+	background-color:yellow;
+	float:left;
+	width:900px;
+}
