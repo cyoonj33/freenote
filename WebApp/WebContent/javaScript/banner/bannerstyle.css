@@ -8,12 +8,20 @@ header, main{
 	 width:600px; margin:0 auto;
 }
 
+
+#pink{
+	height:80px;
+	width:680px;
+	background-color:pink;
+}
+
+#pink>#txt{
+	border:1px solid gray;
+	font-size:2em;
+	background-color:white;
+}
+
 main>img{
 	width:680px; height:300px;
 }
 
-#left{
-	background-color:yellow;
-	float:left;
-	width:900px;
-}
