@@ -30,8 +30,8 @@
 	</main>
 </div>
 
- <div id="birdimg"></div>
- <div id="viewimg"></div>
+ <div id="birdimg" onkeyup="originview()"></div>
+ <div id="viewimg" onkeyup="originview()"></div>
 
  
 </body>
@@ -39,6 +39,10 @@
 
 <script>
 
+function originview(){
+  document.getElementById('birdimg').style.display = "none";
+   document.getElementById('box').style.display ="display";
+}
 
 function birdmove(){
 	var tag="<img src='bird.gif'>";
