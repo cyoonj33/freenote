@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="screensave.css" type="text/css"/>
+
+</head>
+<body>
+
+<div id="box">
+	<header>
+	   <div>이미지를 클릭하시면 화면보호기가 실행됩니다.</div>
+		   <div id=imgline>
+			   <img src='1.jfif' onclick="setview1()"/>
+			   <img src='2.jfif' onclick="setview2()"/>
+			   <img src='3.jfif' onclick="setview3()"/>
+			   <img src='4.jfif' onclick="setview4()"/>
+			   <img src='5.jfif' onclick="setview5()"/>
+			   <img src='6.jfif' onclick="setview6()"/>
+			   <img src='7.gif' onclick="setview7()"/>
+		   </div>
+	</header>
+	
+	
+	<main>
+	   <img src="1.jfif"/>
+	   <img src="2.jfif"/>
+	   <img src="3.jfif"/>
+	</main>
+</div>
+
+ <div id="birdimg"></div>
+ <div id="viewimg"></div>
+
+ 
+</body>
+</html>
+
+<script>
+
+
+function birdmove(){
+	var tag="<img src='bird.gif'>";
+    document.getElementById("birdimg").innerHTML = tag;
+   
+    
+}
+
+
+function birdmove2(){
+	  birdmove();
+	  var x = Math.floor(Math.random()*1200);
+	  var y = Math.floor(Math.random()*1200);
+	    
+	    tag.style.top = x + "px";
+	    tag.style.left = y + "px";
+	    
+	    setTimeout(birdmove(), 100);
+}
+
+
+
+function setview1(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='1.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+    birdmove2();  
+}
+
+function setview2(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='2.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+function setview3(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='3.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+function setview4(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='4.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+function setview5(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='5.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+function setview6(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='6.jfif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+function setview7(){
+	document.getElementById('box').style.display = "none";
+	
+	var tag="<img src='7.gif'>";
+    document.getElementById("viewimg").innerHTML = tag; 
+}
+
+</script>

@@ -42,16 +42,12 @@
    }
    
    //movie리스트 움직이는 메소드////////
-   var x=0;
-   var stepX=-5;
-   var timer;
+   
    function imageMove(){
 	   var movie = document.getElementById("imgLst");
-	   x=x+stepX; //-10
-	   movie.style.left= x +"px"; 
-	   //방향전환
-	   if(x<=-820)stepX=5;
-	   if(x>=0)stepX=-5;
+     	moveX=event.clientX;
+	    moveY=event.clientY;
+	
 	   }
    
    

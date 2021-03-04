@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+	padding:20px;
+	text-align:center;
+	
+}
+
+header{
+	padding-top:10px;
+	margin:0 auto;
+	border:solid 1px gray;
+	width:900px;
+	height:150px;
+	
+}
+
+header>#imgline>img{
+	width:100px;
+	height:100px;
+}
+
+main{
+	padding-top:10px;
+	margin:0 auto;
+	border:solid 1px gray;
+	width:900px;
+	height:1850px;
+}
+
+main>img{
+	width:600px;
+	height:600px;
+}
+
+#viewimg>img{
+	width:100%;
+}
+
+#birdimg>img{
+	width:150px;
+	height:100px;
+	position:absolute;
+	top:50px;
+	left:10px;
+
+	
+}
+
+
