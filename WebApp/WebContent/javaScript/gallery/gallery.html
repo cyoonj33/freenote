@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="gallery.css" type="text/css"/>
+</head>
+
+<script>
+
+function imageSet(){
+	   var img;
+	   for(var i=8; i<=13; i++){
+		   img+="<img src='"+i+".jfif'/>";		    
+	   }
+	   
+	    document.getElementById("imglst").innerHTML = img;
+}
+
+
+</script>
+
+
+<body onload="imageSet();">
+
+<main>
+   <div id="imglst"></div>
+</main>
+
+</body>
+</html>
+
+
+
+
+

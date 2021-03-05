@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body{
+      margin:0;
+    }
+
+    #container{
+        width:1000px; margin:0 auto; background-color:#eee;
+    }
+    
+    #content>img{
+        width:100%;
+    }
+    
+    #imgList>img{
+       width:100px; height:100px;
+    }
+    
+    /*화면보호ㄱㅣ*/
+    #saverMsg{
+      font-size:2em;
+      color:yellow;
+      text-align:center;
+      positon:absolute;
+      background-color:blue;
+      width:100%;
+    }
+    
+    #saverMsg,#saverImg,#wing{
+      display:none;
+    }
+    
+    #saverImg{
+       width:none;
+    }
+    
+    #wing{
+      width:300px;
+      height:100px;
+      position:absolute;
+      top:0px;
+      left:0px;
+      
+    }
+    
+</style>
+<script>
+   function imageSet(){
+	   var imgName=['1.jfif','2.jfif','3.jfif','4.jfif','5.jfif','6.jfif','7.gif'];
+	   var tag="";
+	   for(var i=0; i<imgName.length; i++){
+		   tag+="<img src='screensave/"+imgName[i]+"' onclick='showScreenSaver(this.src)'/>";
+	   }
+	   document.getElementById("imgList").innerHTML=tag;
+   }
+
+//화면보호기 이미지 클릭
+var timer;
+function showScreenSaver(selImg){
+	var wHeight = window.innerHeight;
+	console.log(selImg);
+	//1. 현재 컨텐츠 전체 숨기기
+	document.getElementById("container").style.display="none";
+	//2. 숨겨놓았던 메세지
+	document.getElementById("saverMsg").style.display="block";
+	
+	/*
+	//3. 화면보호기 이미지
+	var saverImg=document.getElementById("saverImg");
+	saverImg.style.display= "block";
+	saverImg.src=selImg;
+	
+	//현재 창 높이를 구한다.
+	var wHeight = window.innerHeight;
+	saverImg.style.height=wHeight+"px";
+	*/
+	//3배경화면 보호기 이미지를 배경으로 설정하기
+	document.body.style.backgroundImage="url("+selImg+")";
+	document.body.style.backgroundSize="100% "+wHeight+"px";
+	
+	//4날개이미지
+	document.getElementById("wing").style.display= "block";
+	timer =setInterval("screenSaverMove()",100);
+}
+
+    //화면보호기 종료
+    function endScreenSaver(){
+    	clearInterval(timer);
+    	document.getElementById("container").style.display="block";
+    	document.getElementById("saverMsg").style.display="none";
+    	//document.getElementById("saverImg").style.display="none";
+    	document.body.style.backgroundImage="";//배경이미지 지우기
+        document.getElementById("wing").style.display="none";
+    }
+    
+    //날개 움직이기
+    var wWidth, wHeight, left=0, y=0, leftStep=5, topStep=5;
+    function screenSaverMove(){
+    	//윈도우 크기
+    	wWidth=window.innerWidth;
+    	wHeight=window.innerHeight;
+    	
+    	left=left+leftStep;//+5
+    	y=y+topStep;//+5
+    	
+    	var wing=document.getElementById("wing").style;
+    	wing.left=left+"px";
+    	wing.top=y+"px";
+    	
+    	//방향 확인하기
+    	if(wHeight-100-5<=y) topStep=-5;//y감소
+    	if(wWidth-300-5<=left) leftStep=-5;//x감소
+    	if(y<=0)topStep=5;//y증가
+    	if(left<=0)leftStep=5;//x증가
+    	
+    }
+
+</script>
+</head>
+<body onload="imageSet();" onkeyup="endScreenSaver()">
+
+<!-- 컨텐츠 -->
+<div id="container">
+    <div>이미지를 클릭하시면 화면보호기로 이동합니다</div>
+    <div id="imgList"></div>
+    </hr>
+    <div id="content">
+         <img src="screensave/1.jfif"/>
+         <img src="screensave/2.jfif"/>
+         <img src="screensave/3.jfif"/>
+         <img src="screensave/4.jfif"/>
+         <img src="screensave/5.jfif"/>
+         <img src="screensave/6.jfif"/>
+         <img src="screensave/7.gif"/>
+    </div>
+
+
+</div>
+
+
+<!-- 화면 보호기 -->
+
+<div id="saverMsg">아무키나 누르시면 화면보호기가 종료됩니다.</div>
+<!--  <img src="screensave/1.jfif" id="saverImg"/> -->
+<img src="screensave/bird.gif" id="wing"/>
+
+
+
+</body>
+</html>

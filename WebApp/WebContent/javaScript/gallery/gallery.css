@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+main{
+
+background-color:pink;
+margin:0px auto;
+width:600px;
+height:1200px;
+
+}
+
+#imglst>img{
+	margin:0px auto;
+	width:200px;
+	height:200px;
+	
+}
+
+
+
+
+
