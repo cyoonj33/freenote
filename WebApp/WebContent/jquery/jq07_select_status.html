@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(function(){
+    	//상태선택자
+    	//text->속성값이 text인 객체를 선택한다
+    	$(":text").css("background-color","pink");
+    	//:checked->
+    	$(":checked").attr('checked', true);
+    	//:selected
+    	$("selected").attr('selected', false);
+    	
+    	
+    	//selectedIndex 선택목록의 index
+    	console.log($("#site").prop('selectedIndex'),$("#site").val());
+    	
+    	//컨텐츠 선택자
+    	$("p").css("margin","10px").css('padding','10px').css('border','3px green solid');
+    	
+    	//contains():특정 문자열이 포함된 경우 선택
+    	$("p:contains('인간과-시작한다.')").css('background-color','pink');
+    	
+    	//has(): 하위에 특정 태그가 포함되면 선택
+    	$("p:has('b')").css('color','red');
+    	
+    	//not(): 특정선택자를 제외한 나머지를 선택한다.
+    	$("p:not(:first)").css('color','blue');
+    	
+    	//closest(): 조상선택자
+    	$("i").closest('body').css('border',"3px dashed green");
+    	
+    	//filter() : 
+        $('p').filter('.c1').css('text-decoration','underline');
+    	
+    	//contents() : 선택자의 하위 내용이 다른 태그에 포함된 경우
+    	$('p').contents().css('font-size','2em');
+    	
+    	
+    });
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<div>
+    <p><b>인간과 드래곤이 평화롭게 공존하던 신비의 땅, 쿠만드라 왕국.</b>
+    어느날 살아있는 모든 생명을 삼키는 악의 세력 '드룬'이 모습을 드러내자 드래곤들은 인간과 세상을 구하기 위해 자신들의 힘을 하나의 보석에 남긴 채 스스로를 희생한다.
+    그러나 드래곤들이 사라진 세상에서 인간들은 각자 살 길을 찾아 드래곤의 보석을 차지하기 위해 분열하기 시작한다.
+    </p>
+     <p class="c1">사람과 fsgajporwjgpojjjjjjjjjweser 울랑랄알
+    </p>
+     <p class="c1">인간과 드래곤이 평화롭게 공존하던 신비의 땅,<i> 쿠만드라 왕국.</i>
+    어느날 살아있는 모든 생명을 삼키는 악의 세력 '드룬'이 모습을 드러내자 드래곤들은 인간과 세상을 구하기 위해 자신들의 힘을 하나의 보석에 남긴 채 스스로를 희생한다.
+    그러나 드래곤들이 사라진 세상에서 인간들은 각자 살 길을 찾아 드래곤의 보석을 차지하기 위해 분열하기 시작한다.
+    </p>
+</div>
+
+
+<form>
+   <ul>
+	      <li>이름</li>
+	      <li><input type="text" name="username" id="username"/>
+	      <li><label>연락처</label></li>
+	      <li><input type="text" name="tel" id="tel"/></li>
+	      <li><label>사용동의여부</label></li>
+	      <li><input type="radio" name="accept" value="yes" checked/>동의
+	          <input type="radio" name="accept" value="no"/>동의안함
+	      </li>
+	      <li><label>자주가는 사이트</label></li>
+	      <li>
+	          <select name="site" id="site">
+	             <option value="not">==직접선택==</option>
+	             <option value="daum">다음</option>
+	             <option value="nate" selected>네이트</option>
+	             <option value="naver">네이버</option>
+	           </select>
+	       </li>
+	       
+	       <li>
+	         <input type="button" value="확인"/>
+	       </li>    
+           
+   </ul>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+    jquery 는 자바스크립트를 라이브러리한다.
+    
+    http://www.jquery.com다운로드
+
+    제이쿼리는 이벤트에 의해서 자동호출
+    
+    html/css/javascript실행부 jquery실행
+    자바스크립트 이벤트는 제이쿼리 실행후 실행됨
+ -->
+ <script src="lib/jquery-3.6.0.min.js"></script>
+ 
+ <script>
+    alert("자바스크립트");
+    
+    
+    //제이쿼리 코드
+    //선택자 이벤트종류 : 바디실행이 끝나면 제이쿼리 레디 이벤트 실행
+    $(document).ready(
+    		function(){
+    			alert("jquery실행부");
+    			
+    		}       
+    );
+    
+ </script>
+ 
+</head>
+<body onload="alert('onload실행됨...')">
+<h1>html문서</h1>
+
+</body>
+</html>
