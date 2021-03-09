@@ -9,7 +9,7 @@
 	  
 	  $('body').append("<img src='bg1.jpg'/>");	  //배경
 	  $('body').append("<img src='noise.png'/>");  //노이즈
-	  $('body').append("<img src='label.png' id='label'/>"); //라벨
+	  $('body').append("<img src='label.png' id='label'/>"); //라벨1
 	  $('body').append("<img src='bi.jfif'/>"); //메인이미지
 	  $('body').append("<div></div>"); //텍스트
 	  
@@ -30,6 +30,11 @@
 	  $('img:first').next().css('width','97px').css('height','90px').css('opacity','0.6').css('position','absolute');
 	  
 	  //라벨
+	  var label1=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"650px");
+	  var label2=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"765px");
+	  var label3=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"885px");
+	  var label4=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"1025px");
+	 
 	  
 	  //메인이미지
 	  $('img').eq(3).css('width','600px').css('height','1000px;').css('margin','0 auto').css('position','absolute').css('top','200px').css('left',"600px").css('text-align','center');
@@ -40,14 +45,7 @@
 	  
 	/////////////////         
 	
-	  $('li').on({mouseenter:function(){
-  		
-  		$(this).css("background","label");
-  	},mouseleave:function(){
-  		
-  		$(this).css("background","");
-  	}});
-  	
+	
 	  
 	 
 	  
