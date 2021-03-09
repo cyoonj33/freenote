@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  img{
+    width:100px; height:100px;
+  }
+
+ ul,li{
+    margin:10px; list-style-type:none; border:1px solid gray; float:left; padding:10px;
+ }
+ 
+ li{border:1px solid orange}
+ 
+</style>
+<script> //(위치 지정해서)추가하기 ,지우기 ,대체하기
+ $(function(){
+	 //append(),appendTo():선택자 뒤에 추가
+	 //before():선택자 이전에 객체 추가
+	 
+	 $('#img').before("<li><img src='../img/04.jfif'/></li>")
+	 
+	 //insertBefore(): 선택자 이전에 객체 추가 $(내용).insetBefore(선택자)
+	 $('<li><img src="../img/03.jfif"/></li>').insertBefore('#img');
+	 
+	 //after():선택자 다음에 객체 추가
+	 $("#img").after("<li><img src='../img/3.jfif'/></li>")
+	 
+	 //insertAfter(): 선택자 다음에 객체 추가 $(내용).insertAfter(선택자)
+	 $("<li id='copy'><img src='../img/2.jfif'/></li>").insertAfter('#img');
+	 
+	 //prepend(): 선택자의 내용중에 제일 앞족에 객체 추가
+	 $("ul").prepend("<li><img src='../img/1.jfif'/></li>")
+	 
+	 //prependTo(): 선택자의 내용중에 제일 앞쪽에 객체 추가 $(내용).prependTo(선택자)
+	 $('<li><img src="../img/05.jfif"/></li>').prependTo('ul');
+	 
+	 //clone() :객체를 복사한다. 한번 복사한것은 한번만 사용가능
+	 var copy = $('#copy').clone();	 
+	 copy.attr('id','copy2')
+	 $('ul').append(copy);
+	 
+	 //empty():선택자의 내용을 지운다.
+	 $("#img").empty();
+	 
+	 //remove():선택자와 내용을 지운다.
+	 $("#copy2").remove();
+	 
+	 //replaceAll():선택자 객체를 치환 $(내용).replaceAll(선택자)
+	 $("<li id='txt'><h1>flower</h1></li>").replaceAll('#copy')
+	 
+	 //replaceWidth() : 선택자와 내용을 다른 내용으로 치환
+	 $("#txt").replaceWith('<h2>Replace</h2>');
+	 
+	 
+ });
+ 
+
+</script>
+</head>
+<body>
+<ul>
+  <li id="img"><img src="../img/05.jfif"/></li>
+</ul>
+</body>
+</html>
