@@ -4,53 +4,88 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+</style>
 <script>
   $(function(){
 	  
-	  $('body').append("<img src='bg1.jpg'/>");	  //배경
-	  $('body').append("<img src='noise.png'/>");  //노이즈
-	  $('body').append("<img src='label.png' id='label'/>"); //라벨1
-	  $('body').append("<img src='bi.jfif'/>"); //메인이미지
-	  $('body').append("<div></div>"); //텍스트
+	  //$('body').append("<img src='bg1.jpg'/>");	  //배경
+	  // $('body').append("<img src='noise.png'/>");  //노이즈
+	  //$('body').append("<img src='label.png' id='label'/>"); //라벨1
+	 $('body').append("<div></div>"); //텍스트
+	 $('body').append("<div><img src='bi.jfif'/></div>"); //메인이미지
 	  
 	  //텍스트
-	  $('div').append("<ul></ul>");
+	  $('div:first').append("<ul></ul>");
 	  $('ul').append("<li>MENU</li>");
 	  $('ul').append("<li>ABOUT</li>");
 	  $('ul').append("<li>WORK</li>");
 	  $('ul').append("<li>CONTACT</li>");
+	  //텍스트
+	  $('div:first').css("width","900px").css("height","50px").css('margin','120px auto').css('text-align','center');
+	  $('ul').css("margin","0");
+	  $('li').css('list-style','none').css('float','left').css('margin','0 40px').css('font-size','2em');
 	  
 	  //본체----------------------------
-	  $('body').css('margin','0px');
+	  $('body').css('margin','0px').css('height','100%').css('width','100%').css("background","url('bg1.jpg')").css('background-size','100%');
 	  
 	  //배경
-	  $('img:first').css('width','100%').css('height','100%').css('text-align','center').css('position','absolute'); 
+	 // $('img:first').css('width','100%').css('height','100%').css('text-align','center').css('position','absolute'); 
 	  
 	  //노이즈
-	  $('img:first').next().css('width','97px').css('height','90px').css('opacity','0.6').css('position','absolute');
+	  //$('img:first').css('width','97px').css('height','90px').css('opacity','0.6').css('position','absolute');
 	  
-	  //라벨
-	  var label1=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"650px");
-	  var label2=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"765px");
-	  var label3=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"885px");
-	  var label4=$('img').eq(2).css('position','absolute').css('top','1px').css('left',"1025px");
-	 
+	  
 	  
 	  //메인이미지
-	  $('img').eq(3).css('width','600px').css('height','1000px;').css('margin','0 auto').css('position','absolute').css('top','200px').css('left',"600px").css('text-align','center');
+	  $('div:eq(1)').css('margin','0 auto').css('width','600px').css('height','1000px');
+	  $('img').eq(0).css('width','600px').css('height','1000px;').css('text-align','center');
 	  
-	  //텍스트
-	  $('div').css('position','absolute').css('margin','0 auto').css('top','50px').css('left',"600px").css('text-align','center');
-	  $('li').css('list-style','none').css('float','left').css('margin','10px').css('font-size','2em');
 	  
-	/////////////////         
-	
-	
+
 	  
+	  
+	//라벨
+	  var label1 ="<img src='label.png' id='label1''/>"; 
+	  var label2 ="<img src='label.png' id='label2'/>";
+	  var label3 ="<img src='label.png' id='label3'/>";
+	  var label4 ="<img src='label.png' id='label4'/>";
 	 
+	  $('body').append(label1);
+	  $('body').append(label2);
+	  $('body').append(label3);
+	  $('body').append(label4);
+	  $('#label1').attr('name','label1').css('position','absolute').css('top','0px').css('left',"0px").css("width","140px");
+	  $('#label2').attr('name','label2').css('position','absolute').css('top','0px').css('left',"0px").css("width","140px");
+	  $('#label3').attr('name','label3').css('position','absolute').css('top','0px').css('left',"0px").css("width","140px");
+	  $('#label4').attr('name','label4').css('position','absolute').css('top','0px').css('left',"0px").css("width","140px");
 	  
+	
+	 
+	  $('li').on({
+		mouseenter:function(){
+		var tag = $(this).position().left;
+			  console.log($(this).attr('name'));
+			//마우스 오버일때 실행
+			//if($(this).attr('name');
+  		var moveLeft = $("#label1").css('left',tag+18+"px").css("opacity","0.8");
+  		var moveLeft = $("#label2").css('left',tag+18+"px").css("opacity","0.8");
+  		var moveLeft = $("#label3").css('left',tag+18+"px").css("opacity","0.8");
+  		var moveLeft = $("#label4").css('left',tag+40+"px").css("opacity","0.8");
+			
+  		//console.log(moveLeft);
+  		//slider(moveLeft);
+  		}
+	  ,mouseleave:function(){
+  		//마우스 아웃일때 실행
+  		
+  		}});
 	  
-	  
+	  var y=0, plus=0;
+	  function slider(moveLeft){
+		  $('#label1').css('left',moveLeft+"px");
+		 
+	  }
 	  
 	  
 	  
