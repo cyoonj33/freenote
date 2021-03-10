@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   article{
+       /*font-size:2em;
+       font-size:10mm;*/
+   }
+   
+</style>
+<script>
+
+$(function(){
+	  //컬러명 설정
+	  var cCode=['red','rgb(249,234,106)','green','pink','#fff','#000','#00f'];
+	  var cName=['빨강','노랑','green','pink','흰색','블랙','파랑'];
+	  
+	  cCode.map(function(value, index){
+		  var tag = "<option value='"+value+"'>"+cName[index]+"</option>";
+		 $( "#colorName" ).append(tag);
+	  });
+	  //이벤트 처리 %("#").on('change'function(){})
+	  $("#colorName").change(function(){
+		  $('article').css($('#choiceColor').val(),$('#colorName').val());
+	  });
+	  //글자가 점점 커지거나 작아지는 처리
+	  $('input').on('click',function(){
+		  console.log( $('article').css('font-size') );
+		  
+		  //버튼들중에 index를 구하여 선택된 버튼 알아내기
+		  var idx = $('#menu>input').index(this);
+		  console.log(idx);
+		  //현재글자크기
+		  var size = parseInt($('article').css('font-size'));
+		  if(idx==0)size--;
+		  if(idx==1)size=16;
+		  if(idx==2)size++;
+		  
+		  $("article").css('font-size',size+"px");
+		  
+		  
+	  });
+	  
+});
+
+
+</script>
+
+</head>
+<body>
+<div id="menu">
+  <select id="choiceColor">
+     <option value='background'>배경색</option>
+     <option value='color'>글자색</option>
+  </select>
+  
+  <select id="colorName"></select>
+  <input type="button" value="-"/>
+  <input type="button" value="0"/>
+  <input type="button" value="+"/>
+</div>
+
+<article>주이탈리아한국문화원은 유니버설발레단의 창작시리즈 '춘향'과 '심청'을 각각 오는 26일과 6월25일 오후 7시 주이탈리아한국문화원 유튜브 채널을 통해 온라인 스트리밍한다.
+발레 '춘향'과 '심청'은 한국의 고전소설과 클래식 발레를 접목시킨 창작품이다. 기획 단계부터 세계 무대를 염두에 두고 제작한 유니버설발레단의 대표 작품이다.
+오는 26일에 먼저 선보이는 '춘향'은 2015년 오만과 2018년 콜롬비아에 초청돼 현지 관객들의 기립박수와 언론의 호평 속에 예술성과 작품성을 검증 받은 바 있다.
+ 차이콥스키의 숨겨진 명곡에 한국 고전미를 더한 무대와 초대형 LED영상, 한복의 아름다운 색채를 입힌 발레 의상이 특징적이다.
+</article>
+
+</body>
+
+</html>
