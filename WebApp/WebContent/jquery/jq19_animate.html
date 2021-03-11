@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+     #a1, #a2, #a3{
+       width:100px;
+       height:100px;  
+       position:absolute;  
+       
+     }
+     
+     #a1{
+       background-color:orange;
+       text-align:center;
+       line-height:100px;
+     }
+
+</style>
+<script>
+
+$(function(){
+	//animate():객체를 이동할 수 있다.
+	//선택자.animate((제이슨 방식으로)),밀리초,콜백함수(생략가능));
+	//에니메이트는 꼭 포지션을 주어야함
+	
+	$("#a1").animate({marginLeft:'1000px',width:'200px',height:'300px',marginTop:'200px'},3000)
+	            .animate({marginLeft:'0px'},3000);
+	$('#a2').animate({marginaLeft:'1000px'},5000,function(){
+		//alert('애니메이트 실행됨')
+		$('#a1').css('background-color','pink');
+		
+	});
+	   //delay():출발시간 지연시킴
+	   $('#a3').delay(3000).animate({marginLeft:'1200px',marginTop:'500px'},5000);
+	   
+	   //stop() : animate정지 시키기
+	   $('#a1,#a2,#a3').mouseover(function(){
+		    $(this).stop();
+	   })
+	   
+	   //라이브러리가 필요
+	   
+});
+
+</script>
+
+
+</head>
+<body>
+<div id="a1">ANIMATE</div>
+<img src="img/8.jfif" id="a2"/><br/>
+<img src="img/9.jfif" id="a3" />
+
+
+</body>
+</html>

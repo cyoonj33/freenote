@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+   .container{
+      width:1000px;
+      margin:0 auto;
+      background:#eee;
+   }
+   
+   #banner{
+      width:600px;
+      height:500px;
+      border:2px solid red;
+      position:relative;
+      overflow:hidden;
+      
+   }
+   
+  
+   
+   #banner>div:first-child{
+     width:3600px;
+     height:500px;
+     position:relative;
+   
+   }
+   
+   #banner>div>img{
+     width:600px;
+     height:500px;
+   }
+   
+   /*텍스트 실행 */
+   #slideText{
+     width:400px;
+     height:300px;
+     position:absolute;
+     left:-450px;
+     top:100px;
+   }
+
+   #slideText>div{
+     position:absolute;
+     left:0px;
+     top:0px;
+     color:red;
+     width:400px;
+   }
+   
+   /*컨트롤러*/
+   
+   #controller{
+     position:absolute;
+     left:200px;
+     top: 450px;
+     
+     
+   }
+   
+   
+    #controller>div{
+     width:15px;
+     height:15px;
+     background-image:url(../img/point_button.png);
+     float:left;
+     margin:0 10px;
+   }
+   
+   
+   .blueIcon{
+      background-position:0px -30px;
+   }
+   
+   .grayIon{
+     background-position:0px -15px;
+   }
+   
+</style>
+<script>
+   $(function(){
+	   //함수 이미지,컨트롤러,텍스트이동
+	   function slideMove(idx){
+		   //이미지 이동위치를 계산
+		   var left = -(idx*600);
+		   $("#banner>div").first().animate({marginLeft:left+"px"},2000);
+		   
+		   //기존 설명서 보여주
+		   $("#slideText>div").css("margin-left","0px");
+		   
+		   //텍스트 설명서 보여주기
+		   $("#slideText>div").eq(idx).delay(1000).animate({marginLeft:"550px"},2000);
+		   
+		   //컨트롤러
+		   $("#controller>div").removeClass('blueIcon'); //기존 컨트롤러 지우기
+		   $("#controller>div").eq(idx).addClass('blueIcon'); //지금 컨트롤 선택하기
+		   
+		   
+	   }
+	   //컨트롤러 이벤트 처리
+	   //1.마우스 오버 이벤트,마우스 아웃 이벤트
+	  $("#controller>div").hover(function(){
+			  
+			  $(this).addClass('grayIcon');			  
+	  },function(){
+			  $(this).removeClass('grayIcon');	  
+	  });
+	   
+	   //2.컨트롤러 클릭이벤트
+	   
+	   $("#controller>div").click(function(){
+		   //컨트롤러 위치 인덱스
+		   var i= $("#controller>div").index(this);
+		   slideMove(i);
+		   
+	   });
+	   
+	   //난수를 생성 - > 0에서 5까지 /0.0~1.0 (큰수-작은수+1)+작은수
+	   var ran=parseInt(Math.random()*6);
+	   slideMove(ran);
+	   
+   });
+
+</script>
+
+
+</head>
+<body>
+<div class="container">
+
+
+  <h1>이미지 슬라이드</h1>
+  
+  <div id="banner">
+       <div><img src="../img/02.jfif"/><img src="../img/03.jfif"/><img src="../img/04.jfif"/><img src="../img/05.jfif"/><img src="../img/06.jfif"/><img src="../img/07.jfif"/></div>
+
+		 <div id="slideText">
+				  <div>
+				        <h1>1슬라이드</h1>
+				        <h1>1내용</h1>
+				        <p>ㅇㅎㅎㅎㅎㅎㅎㅎㅎㅎㄴㄻㅈㄷㄱㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  <div>
+				        <h1>2슬라이드</h1>
+				        <h1>2내용</h1>
+				        <p>ㅇㄴㄻㄹㄹㄹㄹㄹㄹㄹㄹㄹㅈㄷㄱㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  <div>
+				        <h1>3슬라이드</h1>
+				        <h1>3내용</h1>
+				        <p>ㅇㄴㄻㅈㅎㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄷㄱㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  <div>
+				        <h1>4슬라이드</h1>
+				        <h1>4내용</h1>
+				        <p>ㅇㄴㄻㅈㄴ됻ㄳㄷㄱㄷㄱㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  <div>
+				        <h1>5슬라이드</h1>
+				        <h1>5내용</h1>
+				        <p>ㅇㄴㄻㅈㄹㅇㅎㅎㅎㅎㄷㄱㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  <div>
+				        <h1>6슬라이드</h1>
+				        <h1>6내용</h1>
+				        <p>ㅇㄴㄻㅈㄷㄱㅇㄴㄷㄳㄷㄳㄷㄳㄷㅈㄱㄷㅈ</p>  
+				  </div>
+				  
+				  
+		</div>   
+		<div id="controller">
+				        <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+				  </div>
+	
+   </div>
+  	
+</div>
+
+
+  
+</body>
+</html>

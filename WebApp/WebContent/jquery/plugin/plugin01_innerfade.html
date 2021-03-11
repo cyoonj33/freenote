@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery.innerfade.js"></script>
+
+<!-- 
+   https://gist.github.com/coolniikou/665255
+ -->
+ 
+ <style>
+ 
+   ul,li{
+     margin:0; padding:0; list-style-type:none;
+   }
+   
+   #innerImg{
+     width:500px; height:350px;
+   }
+   
+   #innerImg img{
+    width:500px; height:350px;
+   }
+   
+   #txt>li{
+    height:80px;
+    border:2px solid green; background:#925;
+   }
+ 
+ </style>
+ 
+<script>
+  $(function(){
+	  $("#inner").innerfade({
+		  animationtype: 'slide' //slide,fade(기본),
+		  ,speed:5000 //'slow','fast','normal',밀리초
+		  ,timeout:5000 //쇼대기시간
+		  ,type: 'random' // 'random'.'sequence(기본)','random_start'
+		  ,containerheight:'auto'
+	  });
+	  
+	  
+	  $("#txt").innerfade({
+		  speed:3000,
+		  timeout:2000,
+		  type:'random_start',
+		  animationtype:'slide'
+		  
+	  });
+	  
+  });
+
+</script>
+
+</head>
+<body>
+<div id="innerImg">
+   <ul id="inner">
+      <li><a href="https://www.nate.com"></a>
+      <li><a href=""><img src="../../img/04.jfif"/></a></li>
+      <li><a href=""><img src="../../img/05.jfif"/></a></li>
+      <li><a href=""><img src="../../img/06.jfif"/></a></li>
+      <li><a href=""><img src="../../img/07.jfif"/></a></li>
+   
+   </ul>
+
+</div>
+<div id="innerText">
+   <ul id="txt">
+     <li>u65u65ytu</li>
+     <li>yturufgh</li>
+     <li>bbbbbbbbbbb</li>
+     <li>vvvvvvvvv</li>
+     <li>uuuuuuuuuu</li>
+   </ul>
+
+
+
+</div>
+</body>
+</html>
