@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+    https:github.com/alaingoga
+    
+    1.accordion 스타일시트
+    2.제이쿼리
+    3.제이쿼리 ui
+    4. accordion 스트립트
+    
+ -->
+ 
+<link rel="stylesheet" href="accordionImageMenu.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../lib/jquery-ui.min.js"></script>
+<script src="jquery.accordionImageMenu.js"></script>
+
+
+<style>
+   .container{width:1000px; margin:0 auto; background-color:gray;}
+
+</style>
+<script>
+  $(function(){
+	  $('#accordion').AccordionImageMenu({
+		  position: 'horizontal'   // horizontal(기본), vertical
+		  ,openItem : 3// 기본 선택 목록 (index3의 위치 이미지 확장)
+	      ,openDim : 500//확장된 목록의 크기(px)
+	      //,closeDim : 100 //닫힌 목록의 크기
+	      ,width:600//,width -> position이 vertical 일때 //,height -> horizontal일때
+	      ,duration: 3000 //전환시간
+	      ,effect:'easeOutBounce' //easing
+	      ,border: 2
+	      ,color: 'lightblue'
+	      
+	  });
+  })
+
+
+</script>
+
+</head>
+<body>
+<div class="container">
+ <ul id="accordion">
+      <li><a href=""><img src="../../img/04.jfif" title="첫번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/05.jfif" title="두번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/06.jfif" title="세번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/07.jfif" title="네번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/04.jfif" title="첫번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/05.jfif" title="두번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/06.jfif" title="세번째이미지 설명"/></a></li>
+      <li><a href=""><img src="../../img/07.jfif" title="네번째이미지 설명"/></a></li>
+   
+   </ul>
+ </div>  
+</body>
+</html>

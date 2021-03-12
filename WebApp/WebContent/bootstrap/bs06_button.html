@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="lib/bootstrap.js"></script>
+
+
+
+</head>
+<body>
+<div class="container">
+
+   <input type="button" value="버튼(input tag)"/>
+   <button>버튼(button tag)</button>
+   
+   <hr/>
+   
+   <!-- 
+   
+      .btn-success, .btn-primary, .btn-danger.....
+   
+    -->
+    
+   <button class="btn btn-success">.btn : 기본클래스 </button>
+   
+   <button class="btn btn-primary btn-block">.btn-block: 버튼의 폭을 100% </button>
+   
+   <hr/>
+   <!-- 
+       .active : 버튼의 활성화
+       .disabled : 비활성화
+       
+    -->
+   
+   <button class="btn btn-danger">활성화</button>
+   <button class="btn btn-danger active">활성화</button>
+   <button class="btn btn-danger disabled">비활성화</button>
+   <hr/>
+   
+   <!-- 가로 메뉴 만들기 
+   .btn-group
+   -->
+   
+   <div class="btn-group">
+   
+     <button class="btn btn-danger">HIML</button>
+     <div class="btn btn-primary">CSS3</div>
+     <div class="btn btn-warning">JAVASCRIPT</div>
+     <div class="btn btn-info">JQUERY</div>
+     <div class="btn btn-secondary">BOOTSTRAP</div>
+     <div class="btn btn-success">AJAX</div>
+     
+   </div>
+   <hr/>
+   
+   <!-- 
+   
+     세로 메뉴 만들기  
+     .btn-group-vertical :메뉴를 세로로 배치
+     
+    -->
+    <div class="btn-group-vertical">
+      <button class="btn btn-secondary">java</button>
+      <button class="btn btn-secondary">java</button>
+      <button class="btn btn-secondary">java</button>
+      <button class="btn btn-secondary">java</button>
+    </div>
+    
+    <hr/>
+    
+    
+    
+    <!-- 
+      가로 서브 메뉴 만들기
+      getbootstrap.com 에서 popper 링크 걸어야 함
+      
+      .btn-group :메인메뉴 묶기(메인에 클래스 넣음)
+      .btn dropdown-toggle:메인메뉴 목록에 화살표 표시(메인메뉴 목록들에 클래스 넣음)
+      .data-toggle="dropdown" : 메인메뉴 목록에 서브메뉴 표시 설정(메인메뉴 목록들에 클래스 넣음)
+      
+      .dropdown-menu:서브메뉴에 표시(서브에 클래스 넣음)
+      .dropdown-item:서브메뉴 목록에 표시(서브메뉴 목록들에 클래스 넣음)   
+      
+      
+     -->
+     
+     <div class="btn-group">
+        <btton class="btn btn-info dropdown-toggle" data-toggle="dropdown">java</btton>   
+       
+       <!-- 서브메뉴 -->
+          <div class="dropdown-menu">
+             <a href="#" class="dropdown-item">spring</a>
+             <a href="#" class="dropdown-item">spring</a>
+          </div>
+          
+           <btton class="btn btn-info dropdown-toggle" data-toggle="dropdown">java</btton>   
+       
+       <!-- 서브메뉴 -->
+          <div class="dropdown-menu">
+             <a href="#" class="dropdown-item">spring</a>
+             <a href="#" class="dropdown-item">spring</a>
+          </div>
+       
+       
+     </div>
+     <hr/>
+     
+     <!-- 세로로 서브메뉴 만들기  
+     .button-group:vertical :메인메뉴 묶기(메인에 클래스 넣음)
+     .dropdown-menu :서브메뉴에 표시
+     .dropdown-toggle:메인메뉴 목록에 화살표 표시(메인메뉴 목록들에 클래스 넣음)
+     
+     -->
+     
+     <div class="button-group:vertical">
+      <div class="dropdown-submenu">       
+       <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Database</button>
+	        <div class="dropdown-menu">
+		           <a href="#" class="dropdown-item">Oracle</a>
+		           <a href="#" class="dropdown-item">몽고DB</a>
+		         </div>
+		 </div>
+       
+       
+       
+       <div class="dropdown-submenu">
+           <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Database</button>     
+	         <div class="dropdown-menu">
+	           <a href="#" class="dropdown-item">Oracle</a>
+	           <a href="#" class="dropdown-item">몽고DB</a>
+	         </div>
+       </div>
+         
+     </div>
+   
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

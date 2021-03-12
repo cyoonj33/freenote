@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<style>
+
+ .jumbotron{
+   padding:20px 10px;
+ }
+ 
+</style>
+</head>
+<body>
+<div class="container">
+   <!-- .jumbotron : padding, 둥근사각형,회색배경 설정된 클래스-->
+   
+   <div class="jumbotron">
+     아기 토끼가 새 유치원에 갑니다. 설레는 마음으로 만난 담임 선생님은 덩치가 산처럼 크고 목소리가 쩌렁쩌렁한데다가 힘도 장사인 곰 선생님! 
+     아기 토끼는 선생님과 친구들이 낯설기만 합니다. 아기 토끼가 새 유치원에 적응하고 즐겁게 생활할 수 있을까요?
+   </div>
+   
+   <!--  
+   
+       .table : 표에 적용된 line을 표시한다.
+       .table table-striped : 줄단위 배경색(기본회색)
+       .table table-bordered : 표에 선을 표시한다.
+       .table table-hover : 마우스 오버 아웃시 배경색 변경.
+       .table table-dark : 표의 배경을 블랙으로
+       
+   -->
+   
+   <table class="table table-dark table-hover">
+      <tr>
+         <td>번호</td>
+         <td>이름</td>
+         <td>연락처</td>    
+      </tr>
+       <tr>
+         <td>100</td>
+         <td>황민현1</td>
+         <td>010-1004-1000</td>    
+      </tr>
+      <tr>
+         <td>200</td>
+         <td>황민현2</td>
+         <td>010-1004-1002</td>    
+      </tr>
+      <tr>
+         <td>300</td>
+         <td>황민현3</td>
+         <td>010-1004-1003</td>    
+      </tr>
+      <tr>
+         <td>400</td>
+         <td>황민현4</td>
+         <td>010-1004-1004</td>    
+      </tr>
+      <tr>
+         <td>500</td>
+         <td>황민현5</td>
+         <td>010-1004-1005</td>    
+      </tr>
+      <tr>
+         <td>600</td>
+         <td>황민현6</td>
+         <td>010-1004-1006</td>    
+      </tr>
+      <tr>
+         <td colspan="3">문의사항은 02-1111-2222 로 연락주셈</td>
+          
+      </tr>
+   </table>
+   <!-- 
+     테이블 배경색 설정하기
+     
+     .table-primary : blue색
+     .table-success : green색
+     .table-danger : red색
+     'table-info : blue색
+     .table-active :gray색
+     .table-secondary : gray색
+     .table-warning : yellow색
+     
+    -->
+   
+   
+    <table class="table">
+    
+      <tr>
+         <td>번호</td>
+         <td>이름</td>
+         <td>연락처</td>    
+      </tr>
+       <tr class="table-success">
+         <td>100</td>
+         <td>황민현1</td>
+         <td>010-1004-1000</td>    
+      </tr>
+      <tr class="table-danger">
+         <td>200</td>
+         <td>황민현2</td>
+         <td>010-1004-1002</td>    
+      </tr>
+      <tr class="table-primary">
+         <td>300</td>
+         <td>황민현3</td>
+         <td>010-1004-1003</td>    
+      </tr>
+      <tr class="table-info">
+         <td>400</td>
+         <td>황민현4</td>
+         <td>010-1004-1004</td>    
+      </tr>
+      <tr class="table-warning">
+         <td>500</td>
+         <td>황민현5</td>
+         <td>010-1004-1005</td>    
+      </tr>
+      <tr class="table-secondary">
+         <td>600</td>
+         <td>황민현6</td>
+         <td>010-1004-1006</td>    
+      </tr>
+      <tr class="table-active">
+         <td colspan="3">문의사항은 02-1111-2222 로 연락주셈</td>
+          
+      </tr>
+   </table>
+   
+   
+</div>
+
+</body>
+</html>
