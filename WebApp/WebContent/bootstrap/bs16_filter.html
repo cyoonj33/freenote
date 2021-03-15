@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script>
+
+ $(function(){
+	 $("#myInput").keyup(function(){
+		 var value = $(this).val().toLowerCase(); //입력한 문자열을 얻어오기  $("#myinput").val()
+		 
+		 $("#memList>tr").filter(function(){
+			var idx=$(this).text().indexOf(value);    //-1
+			  //        true:그냥둠   false:숨기기
+			 $(this).toggle(idx>-1);
+			
+		 });
+	 });
+ });
+
+</script>
+
+</head>
+<body>
+<div class="container">
+
+	<h1>Filter...Test</h1>
+	<input type="text" id="myInput" placeholder="Search...."/>
+	<hr/>
+	
+	   <table class="table table-hover">
+	   <thead>
+	   
+	      <tr>
+	      
+	         <td>이름</td>
+	         <td>아이디</td>
+	         <td>연락처</td>
+	         <td>주소</td>
+	      
+	      </tr>
+	  </thead> 
+	  
+	  <tbody id="memList"> 
+	       <tr>
+	      
+	         <td>황민현</td>
+	         <td>lovehmh</td>
+	         <td>010-1004-1004</td>
+	         <td>러브시 러브구</td>
+	      
+	      </tr>
+	       <tr>
+	      
+	         <td>토마</td>
+	         <td>토마토마</td>
+	         <td>010-7777-1004</td>
+	         <td>서울시 달나라구</td>
+	      
+	      </tr>
+	      <tr>
+	      
+	         <td>비둘기</td>
+	         <td>둘기둘기</td>
+	         <td>010-9999-9999</td>
+	         <td>구구콘 구구구</td>
+	      
+	      </tr>
+	      <tr>
+	      
+	         <td>김부각</td>
+	         <td>kim</td>
+	         <td>010-1002-1004</td>
+	         <td>김밥천구</td>
+	      
+	      </tr>
+	   
+	   </tbody>
+	   </table>
+
+</div>
+</body>
+</html>

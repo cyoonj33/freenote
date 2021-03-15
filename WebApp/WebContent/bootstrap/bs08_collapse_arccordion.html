@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1>Collapse에</h1>
+    <!-- 버튼 선택하면 컨텐츠 보였다가 안보였다가 할 수 있는 기능 만들기 -->
+    <button class="btn btn-info" data-target="#view1" data-toggle="collapse">클릭하세요</button>
+    <div id="view1" class="collapse show">
+        <img src="../img/07.jfif"/>
+    </div>
+    
+    
+    
+    
+    <hr/>
+    <button class="btn btn-secondary" data-target="#view2" data-toggle="collapse">내용보기/내용닫기</button>
+    <div id="view2" class="collapse show">
+      여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다. 잠들어야만 입장할 수 있는 독특한 마을.
+      그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은, 온갖 꿈을 한데 모아 판매하는 ‘달러구트의 꿈 백화점’이다.
+      긴 잠을 자는 사람들은 물론이고, 짧은 낮잠을 자는 사람들과 동물들로 매일매일 대성황을 이룬다. 범상치 않은 혈통의 주인장 ‘달러구트’,
+      그리고 그의 최측근에서 일하게 된 신참 직원 ‘페니’, 꿈을 만드는 제작자 ‘아가넵 코코’, 그리고 베일에 둘러싸인 비고 마이어스…등이 등장한다.          
+    </div>
+    
+    <h1>accordion 예</h1>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header card-link" data-target="#v1" data-toggle="collapse" data-parent="#accordion">아코디언 적용 예제1</div>
+            <div id="v1" class="collapse">
+               여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.
+                잠들어야만 입장할 수 있는 독특한 마을. 그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은, 온갖 꿈을 한데 모아 판매하는 ‘달러구트의 꿈 백화점’이다.
+                 긴 잠을 자는 사람들은 물론이고, 짧은 낮잠을 자는 사람들과 동물들로 매일매일 대성황을 이룬다. 범상치 않은 혈통의 주인장 ‘달러구트’, 
+                 그리고 그의 최측근에서 일하게 된 신참 직원 ‘페니’, 꿈을 만드는 제작자 ‘아가넵 코코’, 그리고 베일에 둘러싸인 비고 마이어스…등이 등장한다.
+            </div>    
+        </div>
+        <div class="card">
+            <div class="card-header card-link" data-target="#v2" data-toggle="collapse" data-parent="#accordion">아코디언 적용 예제2</div>
+            <div id="v2" class="collapse show">
+               여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.
+                잠들어야만 입장할 수 있는 독특한 마을. 그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은, 온갖 꿈을 한데 모아 판매하는 ‘달러구트의 꿈 백화점’이다.
+                 긴 잠을 자는 사람들은 물론이고, 짧은 낮잠을 자는 사람들과 동물들로 매일매일 대성황을 이룬다. 범상치 않은 혈통의 주인장 ‘달러구트’, 
+                 그리고 그의 최측근에서 일하게 된 신참 직원 ‘페니’, 꿈을 만드는 제작자 ‘아가넵 코코’, 그리고 베일에 둘러싸인 비고 마이어스…등이 등장한다.
+            </div>    
+        </div>
+        <div class="card">
+            <div class="card-header card-link" data-target="#v3" data-toggle="collapse" data-parent="#accordion">아코디언 적용 예제3</div>
+            <div id="v3" class="collapse">
+               여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.
+                잠들어야만 입장할 수 있는 독특한 마을. 그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은, 온갖 꿈을 한데 모아 판매하는 ‘달러구트의 꿈 백화점’이다.
+                 긴 잠을 자는 사람들은 물론이고, 짧은 낮잠을 자는 사람들과 동물들로 매일매일 대성황을 이룬다. 범상치 않은 혈통의 주인장 ‘달러구트’, 
+                 그리고 그의 최측근에서 일하게 된 신참 직원 ‘페니’, 꿈을 만드는 제작자 ‘아가넵 코코’, 그리고 베일에 둘러싸인 비고 마이어스…등이 등장한다.
+            </div>    
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

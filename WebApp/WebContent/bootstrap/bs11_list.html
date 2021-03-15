@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script>
+
+  $(function(){
+	  $(".container>div:first>a").addClass("list-group-item");
+	  
+	  $(".container>div:last").addClass("list-group");
+	  $(".container>div:last>div").addClass("list-group-item");
+  });
+
+
+</script>
+</head>
+<body>
+<div class="container">
+
+   <!-- 
+   1 ul으로 목록만들기
+   2 a태그 목록만들기
+   3 div 태그로 목록 만들기
+    -->
+    
+    <ul class="list-group">
+      <li class="list-group-item">여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.</li>
+      <li class="list-group-item list-group-item-secondary">여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.</li>
+      <li class="list-group-item">여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.</li>
+      <li class="list-group-item">여기는 잠들어야만 입장할 수 있는 ‘달러구트 꿈 백화점’입니다.</li>   
+    </ul>
+    <hr/>
+    
+    
+    
+    <div class="list-group">
+       <a href="#">잠들어야만 입장할 수 있는 독특한 마을.</a>
+       <a href="#">잠들어야만 입장할 수 있는 독특한 마을.</a>
+       <a href="#">잠들어야만 입장할 수 있는 독특한 마을.</a>
+       <a href="#">
+          <h1>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</h1>
+          <p>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</p></a>        
+    </div>
+    <hr/>
+    
+    
+    
+    <div>
+       <div>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</div>
+       <div>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</div>
+       <div>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</div>
+       <div>그곳에 들어온 잠든 손님들에게 가장 인기 있는 곳은,</div>
+    </div>
+    
+    
+</div>
+
+</body>
+</html>
