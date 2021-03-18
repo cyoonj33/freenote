@@ -35,21 +35,9 @@
 </script>
 </head>
 <body>
+<%@ include file="jsp04_include/jspf_header.jspf" %>
 <h2>session,ID : <%=session.getId() %></h2>
 
-<% //세션 로그인 여부를 확인후 선택하여 표시한다.
-
-    if(session.getAttribute("logStatus")==null){//로그인 안됨
-%>
-
-		<a href="<%=request.getContextPath()%>/loginPage/login.html">로그인</a>
- <%   }else if(session.getAttribute("logStatus").equals("Y")){ %>
- 
- 
-		 <%= session.getAttribute("logName") %>
-		<a href="<%=request.getContextPath() %>/loginPage/logout.jsp">로그아웃</a>
-
- <%   } %>
  
    
 <h1>jsp start...</h1>
