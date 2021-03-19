@@ -14,33 +14,29 @@
                        
      -->
  <%
- 
  request.setCharacterEncoding("UTF-8");
- 
  %>  
  <jsp:useBean id="vo" class="com.bitcamp.board.BoardVO" scope="page" />
  <jsp:setProperty name="vo" property="*" />
  
  <%
- 
-   //session의 글쓴이 아이디를 vo에 대입한다
+  //session의 글쓴이 아이디를 vo에 대입한다
 
-   vo.setUserid((String)session.getAttribute("logId"));
- 
- //글쓴이 컴 아이피
- 
-   vo.setIp(request.getRemoteAddr());
- 
-   BoardDAO dao=new BoardDAO();
-   
-   int result = dao.insertBoard(vo);
-   
-   if(result>0){
-	   response.sendRedirect(request.getContextPath()+"/board/boardList.jsp");
-	   
-   }else{
-	   
-	   %>
+       vo.setUserid((String)session.getAttribute("logId"));
+     
+     //글쓴이 컴 아이피
+     
+       vo.setIp(request.getRemoteAddr());
+     
+       BoardDAO dao=new BoardDAO();
+       
+       int result = dao.insertBoard(vo);
+       
+       if(result>0){
+    	   response.sendRedirect(request.getContextPath()+"/board/boardList.jsp");
+    	   
+       }else{
+  %>
 	   <script>
 	      alert("실패");
 	      history.back();

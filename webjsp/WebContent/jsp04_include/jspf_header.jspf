@@ -7,7 +7,7 @@
     
     %>
 <style>
-  header{height:100px; background-color:orange; text-align:center; line-height:50px;}
+  header{height:100px; background-color:pink; text-align:center; line-height:50px;}
 
 </style>
 <header>
