@@ -54,6 +54,29 @@
     <h1>오늘은 <%=year %>년    <%=month %>월     <%=day %>일입니다. </h1>
     <hr/>
     
+    <h1>jstl태그</h1>
+    <!-- 
+    https://tomcat.apache.org/taglibs/standard/
+    http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/
+    jakarta-taglibs-standard-1.1.2zip을 다운로드 후
+    현재 프로젝트 web-inf/lib에
+    jstl.jar, standard.jar 를 복사한다.
+    
+    
+    
+     -->
+     <ol>
+     
+       <li><a href="jstl/jstl01_setTag.jsp">set Tag : 변수의 선언 및 삭제</a></li>
+       <li><a href="jstl/jstl02_ifTag.jsp?name=이순신&age=28">if Tag : 조건문</a></li>
+       <li><a href="jstl/jstl03_forEachTag.jsp">forEach Tag:반복문</a></li>
+       <li><a href="jstl/jstl04_forTokensTag.jsp">forTokens Tag:문자열 조각내기</a></li>
+       <li><a href="jstl/jstl05_urlTag.jsp">url Tag</a></li>
+     
+     </ol>
+     <hr/>
+     
+    
 	<%  //스크립트릿
 			
 			int a=123; 

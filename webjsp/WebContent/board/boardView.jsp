@@ -15,6 +15,9 @@
  li{border-bottom:1px solid gray; line-height:50px;}
 
 </style>
+
+
+
 </head>
 <body>
 <div class="container">
@@ -26,8 +29,10 @@
   String searchKey = request.getParameter("searchKey");
   String searchWord = request.getParameter("searchWord");
   
+  System.out.println(nowNum+","+searchKey+searchWord);
+  
   BoardDAO dao = new BoardDAO();
-  BoardVO vo =dao.getOneSelect(no);
+  BoardVO vo =dao.getOneSelect(no,1);
   
   
   %>
@@ -49,16 +54,33 @@
     
     <div>
     
-      <a href="boardList.jsp?nowNum=<%=nowNum%><%if(searchWord!=null && searchWord.equals("")){out.write("&searchKey="+searchKey+"&searchWord="+searchWord);}%>">리스트</a>
+      <a href="boardList.jsp?nowNum=<%=nowNum%><%if(searchWord!=null && !searchWord.equals("")){out.write("&searchKey="+searchKey+"&searchWord="+searchWord);}%>">리스트</a>
       
       <%
       //글쓴이와 로그인이 아이디가 같으면 수정,삭제 가능
       if(vo.getUserid().equals((String)session.getAttribute("logId"))){ %>
       
-      <a href="">수정</a>
-      <a href="">삭제</a>
+      <a href="<%=request.getContextPath()%>/board/boardEditForm.jsp?no=<%=vo.getNo()%>&nowNum=<%=nowNum%><%if(searchWord!=null && !searchWord.equals(""))
+      {out.write("&searchWord="+searchWord+"&searchKey="+ searchKey);}%>">수정</a>
       
-      <% } %>
+      <a href="javascript:delCheck()">삭제</a>
+      <script>
+      
+        function delCheck(){
+        	if(confirm("삭제하시겠습니까?")){
+        	  location.href="<%=request.getContextPath()%>/board/delOk.jsp?no=<%=vo.getNo()%>&nowNum=<%=nowNum%><%if(searchWord!=null && !searchWord.equals("")){out.write("&searchKey="+searchKey+"&searchWord="+searchWord);}%>";
+        	  
+        	} //yes(true),no(false) 로 선택가능
+        	
+        }
+      
+        </script>
+        
+        <% 
+        }  
+        
+       %>
+     
     </div>
     <hr/>
   
