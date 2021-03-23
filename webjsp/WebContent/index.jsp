@@ -72,6 +72,8 @@
        <li><a href="jstl/jstl03_forEachTag.jsp">forEach Tag:반복문</a></li>
        <li><a href="jstl/jstl04_forTokensTag.jsp">forTokens Tag:문자열 조각내기</a></li>
        <li><a href="jstl/jstl05_urlTag.jsp">url Tag</a></li>
+       <li><a href="jstl/jstl06_chooseTag.jsp?username=홍길동1&age=13">choose Tag:if~else, switch</a></li>
+       <li><a href="jstl/jstl07_redirectTag.jsp">redirect</a></li>
      
      </ol>
      <hr/>
