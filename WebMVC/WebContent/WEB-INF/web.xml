@@ -34,7 +34,7 @@
        
 	    <init-param>
 	       <param-name>proConfig</param-name>
-	       <param-value>D:\workspaceJavaWeb\WebMVC\WebContent\WEB-INF\prop\urlMapping.properties</param-value>  
+	       <param-value>C:\Users\bit\git\freenote\WebMVC\WebContent\WEB-INF\prop\urlMapping.properties</param-value>  
 	    </init-param>
     
     </servlet>
