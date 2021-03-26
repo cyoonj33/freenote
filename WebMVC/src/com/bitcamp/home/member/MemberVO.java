@@ -21,6 +21,7 @@ public class MemberVO {
   
   
   private String interest[];
+  private String interestStr;
   
   
   private String regdate;
@@ -124,13 +125,39 @@ public String getDetailaddr() {
 }
 public void setDetailaddr(String detailaddr) {
 	this.detailaddr = detailaddr;
+	
+	
 }
+
 public String[] getInterest() {
 	return interest;
 }
+
 public void setInterest(String interest[]) {
 	this.interest = interest;
+	for(String i:interest) {
+		interestStr += i+"/";		
+	}	
+	
 }
+
+
+
+
+public String getInterestStr() {
+	return interestStr;	
+	
+}
+
+public void setInterestStr(String interestStr) {
+	this.interestStr = interestStr;
+	//관심분야 문자열로 만들어ㅓ interest에 추가
+	interest = interestStr.split("/");
+		
+}
+
+
+
 public String getRegdate() {
 	return regdate;
 }

@@ -49,7 +49,7 @@
     			alert("아이디 중복 검사를 하세요");
     			return false;
     		}
-    		if($("userpwd").val()==""){
+    		if($("#userpwd").val()==""){
     			alert("비밀번호를 입력하세요.");
     			return false;
     		}
@@ -88,8 +88,8 @@
 
 
 <div class="container">
-   <h1>회원가입하기</h1>
-   <form method="post" id="memId" action="member/memberFormOk.do">
+   <h1 style="padding:30px; text-align:cneter;">회원가입하기</h1>
+   <form method="post" id="memId" action="<%=request.getContextPath()%>/member/memberFormOk.do">
    <ul id="regForm">
       <li>아이디</li>
       <li><input type="text" name="userid" id="userid" maxlength="20" value="love"/>
@@ -101,7 +101,7 @@
       <li>비밀번호확인</li>
       <li><input type="password" name="userpwd2" id="userpwd2" maxlength="20" value="1234"/></li>
       <li>이름</li>
-      <li><input type="text" name="username" id="username" maxlength="20" value="황민현"/></li>
+      <li><input type="text" name="username" id="username" maxlength="20" /></li>
       <li>연락처</li>
       
       <li>
@@ -118,7 +118,7 @@
       <li>이메일</li>
       
       <li>
-        <input type="text" name="emailId" id="emailId" value="llll"/>@
+        <input type="text" name="emailid" id="emailid" value="llll"/>@
         <select name="emaildomain">
            <option value="nate.com">nate.com</option>
            <option value="naver.com">naver.com</option>
@@ -126,6 +126,7 @@
            <option value="gmail.com">gmail.com</option>
         </select>
       </li>
+      
       
       <li>주소</li>
       
