@@ -14,13 +14,13 @@ public interface DataDAOIpl {
 	 //게시글 삭제
 	 public int dataDelete(DataVO vo);
 	 
-	//글 목록
+	 //글 목록
 	 public List<DataVO> dataSelectAll();
 	 
 	 //조회수
 	 public void hitCount(int no);
 	 
 	 //다운로드 횟수 증가
-	 public void downloadCount(int no);
+	 public int downloadCount(int no);
 	
 }

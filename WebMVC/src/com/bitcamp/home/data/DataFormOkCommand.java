@@ -1,5 +1,6 @@
 package com.bitcamp.home.data;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -37,7 +38,8 @@ public class DataFormOkCommand implements CommandService {
 				vo.setIp(req.getRemoteAddr());
 				
 				//폼의 type='file' 태그의  name 속성의 값을 구한다.
-				Enumeration fileList = mr.getFileNames();
+				Enumeration fileList = mr.getFileNames();////filename2,filename1
+				int idx=0;
 				while(fileList.hasMoreElements()) {
 					//System.out.println(fileList.nextElement());
 					String nameAttr=(String)fileList.nextElement();//필드명을
@@ -45,10 +47,30 @@ public class DataFormOkCommand implements CommandService {
 					// mr.getOriginalFileName(nameAttr);//원래 파일명
 					System.out.println("newFilename-->"+newFilename);
 					
+					////////////////////////////////////
+					if(newFilename!=null) {
+						vo.getFilename()[idx++]=newFilename;
+					}
 				}
 				
+				DataDAO dao=new DataDAO();
+				int cnt=dao.dataInsert(vo);
 				
-				return "";
+				//레코드 추가 실패시 업로드 파일 삭제
+				if(cnt<=0) {
+					for(String delFile:vo.getFilename()) {
+						if(delFile!=null) {
+							try {
+							File f=new File(path,delFile);
+							f.delete();
+							}catch(Exception e) {System.out.println("파일삭제에러");}
+						}
+					}
+				}
+				
+				req.setAttribute("cnt", cnt);
+				
+				return "/data/dataFormOk.jsp";
 		
 	}
 
