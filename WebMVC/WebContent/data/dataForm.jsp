@@ -52,6 +52,7 @@
      <li>
          <textarea name="content" id="content"></textarea>     
      </li>
+     <!-- 첫번째 첨부파일 : vo.filename1,vo.filename[0] -->
      <li>첨부파일:<input type="file" name="filename1" id="filename1"/>
                <input type="file" name="filename2" id="filename2"/></li>
                 

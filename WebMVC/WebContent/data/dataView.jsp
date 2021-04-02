@@ -61,7 +61,7 @@ function delCheck(){
    
    <div>
      <c:if test="${userid == vo.userid }">
-        수정
+        <a href="<%=request.getContextPath()%>/data/dataEdit.do?no=${vo.no}">수정</a>
         <a href="javascript:delCheck()">삭제</a>
      </c:if> 
    </div>

@@ -9,6 +9,7 @@ public class DataVO {
   private String filename2;
   private String filename[] = new String[2];
   
+  private String delfile[];
   
   private int hit;
   private int downCount;
@@ -63,6 +64,18 @@ public String[] getFilename() {
 public void setFilename(String[] filename) {
 	this.filename = filename;
 }
+
+
+
+
+public String[] getDelfile() {
+	return delfile;
+}
+public void setDelfile(String[] delfile) {
+	this.delfile = delfile;
+}
+
+
 public int getHit() {
 	return hit;
 }

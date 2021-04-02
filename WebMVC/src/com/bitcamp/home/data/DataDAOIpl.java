@@ -9,7 +9,7 @@ public interface DataDAOIpl {
 	 //글 선택
 	 public void dataSelect(DataVO vo);
 	 //게시글 수정
-	 public int dataUpdate(DataVO vo);
+	 public int dataUpdate(DataVO vo,List<String> newFile);
 	 
 	 //게시글 삭제
 	 public int dataDelete(DataVO vo);

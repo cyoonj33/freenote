@@ -3,10 +3,13 @@ package com.bitcamp.home;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import com.bitcamp.home.data.DataVO;
 
 public class DBCPConn {
 	protected Connection con=null;
@@ -36,6 +39,11 @@ public class DBCPConn {
 			if(pstmt!=null)pstmt.close();
 			if(con!=null)con.close();
 		}catch(Exception e) {}
+	}
+
+	public List<DataVO> dataSelectAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -60,6 +60,10 @@ public class DataDAO extends DBCPConn implements DataDAOIpl {
 			}
 			
 		}catch(Exception e) {
+			System.out.println("파일명 선택 에러");
+			e.printStackTrace();
+		}finally {
+			getClose();
 			
 		}
 		
@@ -68,36 +72,87 @@ public class DataDAO extends DBCPConn implements DataDAOIpl {
 	}
 
 	
-	
-	
-	
-	
-	@Override
-	public int dataUpdate(DataVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	//레코드의 파일명 선택
+	   public List<String> getSelectFile(int no){
+	      List<String> fileList = new ArrayList<String>();
+	      try {
+	         getConn();
+	         sql = "select filename1, filename2 from data where no=?";
+	         pstmt = con.prepareStatement(sql);
+	         pstmt.setInt(1, no);
+	         
+	         rs = pstmt.executeQuery();
+	         if(rs.next()) {
+	            fileList.add(rs.getString(1));
+	            if(rs.getString(2)!=null) {//있을때만 한다. 
+	               fileList.add(rs.getString(2));
+	            }
+	         }
+	      }catch(Exception e){
+	         System.out.println("레코드의 파일 선택 에러,,,,,getSelectFile(DAO)");
+	         e.printStackTrace();
+	      }finally {
+	         getClose();
+	      }
+	      return fileList;
+	   }
 
+	
+	
 	@Override
-	public int dataDelete(DataVO vo) {
-		int cnt=0;
+	public int dataUpdate(DataVO vo,List<String> newFile) {
+		int result=0;
 		try {
 			getConn();
-			sql="delete from data where no=? and userid=?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1,vo.getNo());
-			pstmt.setString(2, vo.getUserid());
+			sql="update data set title=?, content=?,filename1=?, filename2=? "
+					+ " where no=? and userid=? ";
 			
-			cnt = pstmt.executeUpdate();
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setString(3, newFile.get(0));
+			if(newFile.size()==2) {
+				pstmt.setString(4, newFile.get(1));
+				
+			}else {
+				pstmt.setString(4, null);
+			}
+			pstmt.setInt(5,vo.getNo());
+			pstmt.setString(6,vo.getUserid());
+			
+			result=pstmt.executeUpdate();
+			
 			
 		}catch(Exception e) {
-			System.out.println("자료실 지우기 에러");
+			System.out.println();
 			e.printStackTrace();
 		}finally {
 			getClose();
 		}
-		return cnt;
+		return result;
 	}
+
+	@Override
+	 public int dataDelete(DataVO vo) {
+	      int cnt=0;
+	      try {
+	         getConn();
+	         sql = "delete from data where no=? and userid=?";
+	         pstmt = con.prepareStatement(sql);
+	         pstmt.setInt(1, vo.getNo());
+	         pstmt.setString(2, vo.getUserid());
+	         
+	         cnt = pstmt.executeUpdate();
+	         
+	      }catch(Exception e) {
+	         System.out.println("자료실지우기 에러");
+	         e.printStackTrace();
+	      }finally {
+	         getClose();
+	      }
+	      return cnt;
+	   }
+
 
 	@Override
 	public List<DataVO> dataSelectAll() {
@@ -211,5 +266,6 @@ public class DataDAO extends DBCPConn implements DataDAOIpl {
 		return count;
 
 	}
+
 
 }
