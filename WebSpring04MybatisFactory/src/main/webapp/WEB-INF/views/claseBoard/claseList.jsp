@@ -29,13 +29,21 @@
          <li>글쓴이</li>
          <li>등록일</li>
          <li>조회수</li>
+         <c:forEach var="dto" items="${list}">
          
-         
-         <li>번호</li>
-         <li class="wordcut"><a href="claseView?">제목</a></li>
-         <li>글쓴이</li>
-         <li>등록일</li>
-         <li>조회수</li>
+         <li>${dto.no}</li>
+         <li class="wordcut">
+         <c:forEach var="i" begin="1" end="${dto.step }">
+           &nbsp;&nbsp;&nbsp;&nbsp;
+         </c:forEach>
+         <c:if test="${dto.step>0 }">
+            ㄴ▶
+         </c:if>
+         <a href="claseView?no=${dto.no }">${dto.subject }</a></li>
+         <li>${dto.userid }</li>
+         <li>${dto.writedate }</li>
+         <li>${dto.hit }</li>
+         </c:forEach>
        </ul>
     
     

@@ -25,6 +25,7 @@
            <mvc:mapping path="/replyWriteOk"/>
            <mvc:mapping path="/claseWrite"/>
            <mvc:mapping path="/claseWriteOk"/>
+           <mvc:mapping path="/claseWriteFormOk"/>
            
            
            <bean class="com.bitcamp.home.interceptor.LoginInterceptor"></bean>
