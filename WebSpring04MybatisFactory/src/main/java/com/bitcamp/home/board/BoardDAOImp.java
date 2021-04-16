@@ -2,6 +2,7 @@ package com.bitcamp.home.board;
 
 import java.util.List;
 
+
 public interface BoardDAOImp {
    //리스트
 	public List<BoardVO> allList();

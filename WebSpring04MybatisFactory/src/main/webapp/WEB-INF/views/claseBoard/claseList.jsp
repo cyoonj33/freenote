@@ -29,9 +29,10 @@
          <li>글쓴이</li>
          <li>등록일</li>
          <li>조회수</li>
+         <c:set var="recordNum" value="${totalRecord }"/>
          <c:forEach var="dto" items="${list}">
          
-         <li>${dto.no}</li>
+         <li>${dto.no}(${recordNum})</li>
          <li class="wordcut">
          <c:forEach var="i" begin="1" end="${dto.step }">
            &nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,6 +44,7 @@
          <li>${dto.userid }</li>
          <li>${dto.writedate }</li>
          <li>${dto.hit }</li>
+         <c:set var="recordNum" value="${recordNum-1 }"/>
          </c:forEach>
        </ul>
     

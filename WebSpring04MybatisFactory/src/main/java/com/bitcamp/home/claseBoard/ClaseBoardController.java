@@ -31,11 +31,14 @@ public class ClaseBoardController {
 		ModelAndView mav=new ModelAndView();
 		ClaseBoardDAOImp dao=sqlSession.getMapper(ClaseBoardDAOImp.class);
 		
+		mav.addObject("totalRecord",dao.getTotalRecord());//총레코드수
+		
 		mav.addObject("list",dao.claseAllRecord());
 		
 		mav.setViewName("claseBoard/claseList");
 		return mav;
 	}
+	
 	
 
 	//글쓰기 폼
@@ -62,6 +65,8 @@ public class ClaseBoardController {
 	}
 		return mav;
 	}
+	
+	
 	@RequestMapping("/claseView")
 	public ModelAndView claseView(int no) {
 		ClaseBoardDAOImp dao=sqlSession.getMapper(ClaseBoardDAOImp.class);
@@ -73,7 +78,12 @@ public class ClaseBoardController {
 		mav.setViewName("claseBoard/claseView");
 		return mav;
 		
+		
+		
+		
 	}
+	
+	
 	
 	//답글쓰기 폼
 	@RequestMapping("/claseWriteForm")
@@ -133,5 +143,69 @@ public class ClaseBoardController {
 		}
 		return mav;
 	}
+	//수정폼으로 이동
+	@RequestMapping("/claseEdit")
+	public ModelAndView claseEdit(int no) {
+		ClaseBoardDAOImp dao= sqlSession.getMapper(ClaseBoardDAOImp.class);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("dto",dao.claseSelect(no));
+		mav.setViewName("claseBoard/claseEdit");
+		return mav;
+	}
 	
+	//글수정
+	
+	@RequestMapping(value="/claseEditOk", method=RequestMethod.POST)
+	public ModelAndView claseEditOk(ClaseBoardDTO dto,  HttpSession session) {
+		dto.setUserid((String)session.getAttribute("logId"));
+		
+		ClaseBoardDAOImp dao = sqlSession.getMapper(ClaseBoardDAOImp.class);
+		int result = dao.claseUpdate(dto);
+		
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("no",dto.getNo());
+		if(result>0) {//수정시 --글내용보기
+			
+			mav.setViewName("redirect:claseView");
+		}else {//수정페이지--수정페이지로
+			mav.setViewName("redirect:claseEdit");
+		}
+		return mav;
+	}
+	
+	//글삭제
+	@RequestMapping("/claseDel")
+	public ModelAndView claseDel(int no, HttpSession session) {
+		ClaseBoardDAOImp dao = sqlSession.getMapper(ClaseBoardDAOImp.class);
+		String userid = (String)session.getAttribute("logId");
+		
+		//원글은 삭제가 가능하고 답글이 있는경우 답글까지 지운다.
+		//답글은 제목과 글내용을 구한다.
+		
+		//원글의 정보->step가져오거나,no,ref가 같은지 
+		ClaseBoardDTO orgData = dao.getStep(no);//스탭 유저아이디 포함
+		
+		int result=0;		
+		if(orgData.getStep()==0 && orgData.getUserid().equals(userid)) {//원글
+			result = dao.claseDelete(no);
+			
+		}else if(orgData.getStep()>0 && orgData.getUserid().equals(userid)){//답글
+			result = dao.claseDeleteUpdate(no,userid);
+		}
+		
+		
+		ModelAndView mav = new ModelAndView();
+		/*
+		if(result>0) { //삭제
+			mav.setViewName("redirect:claseList");
+		}else { //삭제실패
+			mav.addObject("no", no);
+			mav.setViewName("redirect:claseView");
+		}
+		*/
+		mav.addObject("result",result);
+		mav.addObject("no",no);
+		mav.setViewName("claseBoard/delCheck");
+		return mav;
+	}
 }

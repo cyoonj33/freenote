@@ -26,6 +26,8 @@ public class BoardController {
 		return mav;
 	}
 	
+	
+	
 	@RequestMapping("/boardWrite")
 	public String boardWrite() {
 		return "board/boardWrite";
@@ -57,8 +59,10 @@ public class BoardController {
 		BoardVO vo = dao.boardSelect(no);
 		model.addAttribute("vo",vo); //view 페이지에서 사용한다.
 		return "board/boardView";
-		
+	
 	}
+	
+	
 	
 	@RequestMapping("/boardEdit")
 	public ModelAndView boardEdit(int no) {

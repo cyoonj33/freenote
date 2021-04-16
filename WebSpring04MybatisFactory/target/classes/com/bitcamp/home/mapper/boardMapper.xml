@@ -27,4 +27,7 @@
      delete from board where no=#{param1} and userid = #{param2}
   
   </delete>
+  
+ 
+    
   </mapper>
