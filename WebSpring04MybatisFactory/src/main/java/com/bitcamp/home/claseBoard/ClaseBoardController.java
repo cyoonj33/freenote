@@ -76,10 +76,14 @@ public class ClaseBoardController {
 		
 		mav.addObject("dto",dao.claseSelect(no));
 		mav.setViewName("claseBoard/claseView");
-		return mav;
 		
 		
+		//이전글 다음글 넣기//2지일 경우에------
 		
+	   PrevNextVO vo = dao.lagLeadSelect(no);
+	   mav.addObject("vo",vo);
+	   return mav;
+	   
 		
 	}
 	

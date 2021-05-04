@@ -39,14 +39,30 @@
        <a href="claseWriteForm?no=${dto.no}">답글</a>       
     </div>
     
+   
+    
     <div>
-     <c:forEach var="data" items="${list }">
-      <ul>
-       <li>번호: ${dto.no }</li>
-       <li>제목: ${dto.subject }</li>
-       <li>작성자: ${dto.userid }</li>
-      </ul>
-      </c:forEach>
+    
+       <!-- 이전글 다음글 -->
+       
+       
+       다음글 : 
+       <c:if test="${vo.nextNo==0 }">
+         ${vo.nextSuject }
+       </c:if>
+       <c:if test="${vo.nextNo>0 }">
+          <a href="claseView?no=${vo.prevNo}">${vo.nextSubject }</a>
+       </c:if>
+       <br/>
+       
+        이전글 :
+       <c:if test="${vo.prevNo==0 }">
+          ${vo.prevSubject }
+       </c:if>
+       <c:if test="${vo.prevNo>0 }">
+          <a href="claseView?no=${vo.prevNo}">${vo.prevSubject }</a>
+       </c:if><br/>  
+    
     </div>
 
 

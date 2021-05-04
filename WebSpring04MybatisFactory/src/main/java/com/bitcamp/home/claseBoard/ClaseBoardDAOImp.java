@@ -17,5 +17,9 @@ public interface ClaseBoardDAOImp {
    public ClaseBoardDTO getStep(int no);//스탭과 유저아이디 가져오기
    public int claseDelete(int no);//원글삭제
    public int claseDeleteUpdate(int no,String userid);//답글삭제
-   public List<ClaseBoardDTO> nextListRecord();//다음글리스트
+   public PrevNextVO lagLeadSelect(int no);//이전글 다음글
+   
+   
+   
 }
+

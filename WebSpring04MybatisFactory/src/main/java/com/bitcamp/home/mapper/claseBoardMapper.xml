@@ -60,10 +60,18 @@
     </update>
     
      
-    <select id="nextListRecord">
-       select * from (select no,subject,userid(lead(subject,1,'다음글')over(order by num)next_subject, lag(subject,1,'이전글')over(order by num)pre_subject,from ClaseBoard)where no=#{param1})
+    <select id="lagLeadSelect" resultType="com.bitcamp.home.claseBoard.PrevNextVO">
+     select * from(
+		select no,
+		lag(no,1,0) over (order by no desc) prevNo,
+		lag(subject,1,'이전글이 없습니다.') over (order by no desc) prevSubject,
+		lead(no, 1, 0)over (order by no desc) nextNo,
+		lead(subject,1,'다음글이 없습니다.') over (order by no desc) nextSubject
+		from claseboard where step=0 order by ref desc, lvl asc)
+		where no=#{param1}
     
     </select>
+    
     
     
 </mapper> 
